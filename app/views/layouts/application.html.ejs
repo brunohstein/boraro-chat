@@ -9,9 +9,13 @@
     <%- scriptLink('/js/core/models.js',   {type: 'text/javascript'}) %>
     <%- scriptLink('/js/config/init.js',   {type: 'text/javascript'}) %>
 
-    <%- styleLink('/css/style.css',        {rel:'stylesheet'}) %>
+    <%- styleLink('/css/application.css',  {rel:'stylesheet'}) %>
   </head>
   <body>
-    <%- yield(); %>
+    <div class="row align-center">
+      <div class="span span16">
+        <%- yield(); %>
+      </div>
+    </div>
   </body>
 </html>

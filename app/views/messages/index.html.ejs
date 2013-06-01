@@ -31,11 +31,14 @@
       this.options = opts || {};
 
       this.create = function (message) {
-        $('#messages-list').append(renderTemplate(message));
+        message.getUser(function(user) {
+          message['user'] = user;
+          $('#messages-list').append(renderTemplate(message));
+        });
       };
 
       this.update = function (message) {
-        $('#message-' + message.id).replaceWith(renderTemplate2(message));
+        $('#message-' + message.id).replaceWith(renderTemplate(message));
       };
 
       this.remove = function (id) {

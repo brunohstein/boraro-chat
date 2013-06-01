@@ -10,7 +10,7 @@ var Messages = function () {
   this.index = function (req, resp, params) {
     var self = this;
 
-    geddy.model.Message.all(function(err, messages) {
+    geddy.model.Message.all({}, {sort: {createdAt: 'asc'}}, function(err, messages) {
       self.respond({params: params, messages: messages});
     });
   };

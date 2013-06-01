@@ -1,6 +1,7 @@
 var passport = require('../helpers/passport'),
     cryptPass = passport.cryptPass,
-    requireAuth = passport.requireAuth;
+    requireAuth = passport.requireAuth,
+    helpers = require('../helpers/application');
 
 var Users = function () {
   this.before(requireAuth, {
@@ -10,6 +11,7 @@ var Users = function () {
   this.respondsWith = ['html', 'json', 'xml', 'js', 'txt'];
 
   this.index = function (req, resp, params) {
+    helpers.currentUser(this.session);
     var self = this;
 
     geddy.model.User.all(function(err, users) {
@@ -40,7 +42,7 @@ var Users = function () {
             params.errors = err;
             self.transfer('add');
           } else {
-            self.redirect({controller: self.name});
+            self.redirect({controller: 'users', action: 'show', user: user.username});
           }
         });
       }
@@ -48,6 +50,7 @@ var Users = function () {
   };
 
   this.show = function (req, resp, params) {
+    helpers.currentUser(this.session);
     var self = this;
 
     geddy.model.User.first({username: params.user}, function(err, user) {
@@ -65,6 +68,7 @@ var Users = function () {
   };
 
   this.edit = function (req, resp, params) {
+    helpers.currentUser(this.session);
     var self = this;
 
     geddy.model.User.first({username: params.user}, function(err, user) {

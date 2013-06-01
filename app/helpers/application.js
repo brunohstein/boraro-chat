@@ -14,5 +14,13 @@ module.exports = {
       .replace(/-+/g, '-');
 
     return str;
+  },
+
+  currentUser: function(session) {
+    geddy.model.User.first({id: session.get('userId')}, function (err, user) {
+      if (user) {
+        geddy.currentUser = user;
+      }
+    });
   }
 }

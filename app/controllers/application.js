@@ -1,7 +1,4 @@
-var Application = function () {  
-
-  this.helpers = require('../helpers/application');
-
+var Application = function () { 
 };
 
 exports.Application = Application;

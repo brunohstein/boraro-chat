@@ -1,9 +1,9 @@
 <h2>All Messages</h2>
 
 <% if (messages) { %>
-  <ul>
+  <ul id="messages-list">
     <% for (var i = 0, ii = messages.length; i < ii; i++) { %>
-      <li>
+      <li id="<%= messages[i].id %>">
         <p><%= messages[i].body %></p>
         <i><%= geddy.date.relativeTime(new Date(messages[i].createdAt)) %></i>
         <b><%= messages[i].user.name %></b>
@@ -11,3 +11,42 @@
     <% } %>
   </ul>
 <% } %>
+
+<script type="text/javascript">
+  $(function () {
+    geddy.io.addListenersForModels(['Message']);
+
+    var renderTemplate = function(message) {
+      var template = [
+        '<li id="' + message.id + '">',
+          '<p>' + message.body + '</p>',
+          '<i>' + geddy.date.relativeTime(new Date(message.createdAt)) + '</i>',
+          // '<b>' + message.user.name + '</b>', TODO: listar o nome do usuário após evento do socket.io
+        '</li>'].join('');
+      return $(template);
+    };
+
+    var MessagesController = function (opts) {
+      var self = this;
+      this.options = opts || {};
+
+      this.create = function (message) {
+        $('#messages-list').append(renderTemplate(message));
+      };
+
+      this.update = function (message) {
+        $('#message-' + message.id).replaceWith(renderTemplate(message));
+      };
+
+      this.remove = function (id) {
+        $('#message-' + id).remove();
+      };
+    };
+
+    geddy.Messages = new MessagesController();
+
+    geddy.model.Message.on('save',   geddy.Messages.create);
+    geddy.model.Message.on('update', geddy.Messages.update);
+    geddy.model.Message.on('remove', geddy.Messages.remove);
+  });
+</script>

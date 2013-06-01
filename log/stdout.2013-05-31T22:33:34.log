@@ -1,4 +1,4 @@
-[Sat, 01 Jun 2013 03:38:12 GMT] INFO Server starting with config: {
+[Sat, 01 Jun 2013 01:31:34 GMT] INFO Server starting with config: {
   "environment": "development",
   "workers": 1,
   "port": 4000,
@@ -60,11 +60,8 @@
   },
   "secret": "nBdksZvScvWOBSKzhnEEomC6s0DaSZxuhPK9fBb8O4hfpZIYrmexZYlnRQCexGa5PHxx9a884TouqGFWXaTpRDv4BeDWg7W0sN1rpO2A1fG9hrBDMy7I9ljPnGFBNjLB"
 }
-[Sat, 01 Jun 2013 03:38:12 GMT] INFO Creating 1 worker process.
-[Sat, 01 Jun 2013 03:38:13 GMT] INFO Server worker running in development on port 4000 with a PID of: 4913
-[Sat, 01 Jun 2013 03:46:53 GMT] INFO Code changed, killing 4913, cycling ...
-[Sat, 01 Jun 2013 03:46:53 GMT] INFO Creating 1 worker process.
-[Sat, 01 Jun 2013 03:46:54 GMT] INFO Server worker running in development on port 4000 with a PID of: 4981
-[Sat, 01 Jun 2013 03:48:03 GMT] INFO Code changed, killing 4981, cycling ...
-[Sat, 01 Jun 2013 03:48:03 GMT] INFO Creating 1 worker process.
-[Sat, 01 Jun 2013 03:48:04 GMT] INFO Server worker running in development on port 4000 with a PID of: 4989
+[Sat, 01 Jun 2013 01:31:34 GMT] INFO Creating 1 worker process.
+[Sat, 01 Jun 2013 01:31:35 GMT] INFO Server worker running in development on port 4000 with a PID of: 2556
+[Sat, 01 Jun 2013 01:33:09 GMT] INFO Code changed, killing 2556, cycling ...
+[Sat, 01 Jun 2013 01:33:09 GMT] INFO Creating 1 worker process.
+[Sat, 01 Jun 2013 01:33:10 GMT] INFO Server worker running in development on port 4000 with a PID of: 2567

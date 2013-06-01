@@ -1,9 +1,11 @@
 var strategies = require('../helpers/passport/strategies'),
-    authTypes = geddy.mixin(strategies, {local: {name: 'local account'}});;
+    authTypes = geddy.mixin(strategies, {local: {name: 'local account'}}),
+    helpers = require('../helpers/application');;
 
 var Main = function () {
 
   this.index = function (req, resp, params) {
+    helpers.currentUser(this.session);
     var self = this;
 
     geddy.model.User.first({id: this.session.get('userId')}, function (err, user) {

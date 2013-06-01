@@ -1,0 +1,111 @@
+[Fri, 31 May 2013 16:19:37 GMT] INFO Server starting with config: {
+  "environment": "development",
+  "workers": 1,
+  "port": 4000,
+  "spdy": null,
+  "ssl": null,
+  "debug": true,
+  "rotateWorkers": false,
+  "rotationWindow": 7200000,
+  "rotationTimeout": 300000,
+  "logDir": "/Users/bruno/Workspace/boraro-chat/log",
+  "gracefulShutdownTimeout": 30000,
+  "heartbeatInterval": 5000,
+  "heartbeatWindow": 20000,
+  "staticFilePath": "/Users/bruno/Workspace/boraro-chat/public",
+  "sessions": {
+    "store": "memory",
+    "key": "sid",
+    "expiry": 1209600
+  },
+  "cookieSessionKey": "sdata",
+  "i18n": {
+    "defaultLocale": "en-us",
+    "loadPaths": [
+      "/Users/bruno/Workspace/boraro-chat/config/locales"
+    ]
+  },
+  "hostname": null,
+  "fullHostname": null,
+  "connectCompatibility": false,
+  "detailedErrors": true,
+  "model": {
+    "defaultAdapter": "postgres"
+  },
+  "db": {
+    "postgres": {
+      "user": "bruno",
+      "database": "boraro_chat",
+      "password": "",
+      "host": "localhost",
+      "port": 5432
+    }
+  },
+  "passport": {
+    "successRedirect": "/",
+    "failureRedirect": "/login",
+    "twitter": {
+      "consumerKey": "XXXXX",
+      "consumerSecret": "XXXXX"
+    },
+    "facebook": {
+      "clientID": "XXXXX",
+      "clientSecret": "XXXXX"
+    },
+    "yammer": {
+      "clientID": "XXXXX",
+      "clientSecret": "XXXXX"
+    }
+  },
+  "secret": "nBdksZvScvWOBSKzhnEEomC6s0DaSZxuhPK9fBb8O4hfpZIYrmexZYlnRQCexGa5PHxx9a884TouqGFWXaTpRDv4BeDWg7W0sN1rpO2A1fG9hrBDMy7I9ljPnGFBNjLB"
+}
+[Fri, 31 May 2013 16:19:37 GMT] INFO Creating 1 worker process.
+[Fri, 31 May 2013 16:19:38 GMT] INFO Server worker running in development on port 4000 with a PID of: 15908
+[Fri, 31 May 2013 16:20:22 GMT] INFO Creating 1 worker process.
+[Fri, 31 May 2013 16:20:23 GMT] INFO Server worker running in development on port 4000 with a PID of: 15920
+[Fri, 31 May 2013 16:20:27 GMT] INFO Code changed, killing 15920, cycling ...
+[Fri, 31 May 2013 16:20:27 GMT] INFO Creating 1 worker process.
+[Fri, 31 May 2013 16:20:28 GMT] INFO Server worker running in development on port 4000 with a PID of: 15925
+[Fri, 31 May 2013 16:20:47 GMT] INFO Code changed, killing 15925, cycling ...
+[Fri, 31 May 2013 16:20:47 GMT] INFO Creating 1 worker process.
+[Fri, 31 May 2013 16:20:48 GMT] INFO Server worker running in development on port 4000 with a PID of: 15931
+[Fri, 31 May 2013 16:20:57 GMT] INFO Code changed, killing 15931, cycling ...
+[Fri, 31 May 2013 16:20:57 GMT] INFO Creating 1 worker process.
+[Fri, 31 May 2013 16:20:58 GMT] INFO Server worker running in development on port 4000 with a PID of: 15937
+[Fri, 31 May 2013 16:22:22 GMT] INFO Code changed, killing 15937, cycling ...
+[Fri, 31 May 2013 16:22:22 GMT] INFO Creating 1 worker process.
+[Fri, 31 May 2013 16:22:23 GMT] INFO Server worker running in development on port 4000 with a PID of: 15946
+[Fri, 31 May 2013 16:23:58 GMT] INFO Code changed, killing 15946, cycling ...
+[Fri, 31 May 2013 16:23:58 GMT] INFO Creating 1 worker process.
+[Fri, 31 May 2013 16:23:58 GMT] INFO Server worker running in development on port 4000 with a PID of: 15963
+[Fri, 31 May 2013 16:24:18 GMT] INFO Code changed, killing 15963, cycling ...
+[Fri, 31 May 2013 16:24:18 GMT] INFO Creating 1 worker process.
+[Fri, 31 May 2013 16:24:18 GMT] INFO Server worker running in development on port 4000 with a PID of: 15969
+[Fri, 31 May 2013 16:24:38 GMT] INFO Code changed, killing 15969, cycling ...
+[Fri, 31 May 2013 16:24:38 GMT] INFO Creating 1 worker process.
+[Fri, 31 May 2013 16:24:38 GMT] INFO Server worker running in development on port 4000 with a PID of: 15975
+[Fri, 31 May 2013 16:24:58 GMT] INFO Code changed, killing 15975, cycling ...
+[Fri, 31 May 2013 16:24:58 GMT] INFO Creating 1 worker process.
+[Fri, 31 May 2013 16:24:58 GMT] INFO Server worker running in development on port 4000 with a PID of: 15981
+[Fri, 31 May 2013 16:25:03 GMT] INFO Code changed, killing 15981, cycling ...
+[Fri, 31 May 2013 16:25:03 GMT] INFO Creating 1 worker process.
+[Fri, 31 May 2013 16:25:03 GMT] INFO Server worker running in development on port 4000 with a PID of: 15986
+[Fri, 31 May 2013 16:25:18 GMT] INFO Code changed, killing 15986, cycling ...
+[Fri, 31 May 2013 16:25:18 GMT] INFO Creating 1 worker process.
+[Fri, 31 May 2013 16:25:18 GMT] INFO Server worker running in development on port 4000 with a PID of: 15992
+[Fri, 31 May 2013 16:25:28 GMT] INFO Code changed, killing 15992, cycling ...
+[Fri, 31 May 2013 16:25:28 GMT] INFO Creating 1 worker process.
+[Fri, 31 May 2013 16:25:28 GMT] INFO Server worker running in development on port 4000 with a PID of: 15997
+[Fri, 31 May 2013 16:25:58 GMT] INFO Code changed, killing 15997, cycling ...
+[Fri, 31 May 2013 16:25:58 GMT] INFO Creating 1 worker process.
+[Fri, 31 May 2013 16:25:58 GMT] INFO Server worker running in development on port 4000 with a PID of: 16004
+[Fri, 31 May 2013 16:26:18 GMT] INFO Code changed, killing 16004, cycling ...
+[Fri, 31 May 2013 16:26:18 GMT] INFO Creating 1 worker process.
+[Fri, 31 May 2013 16:26:23 GMT] INFO Creating 1 worker process.
+[Fri, 31 May 2013 16:26:23 GMT] INFO Server worker running in development on port 4000 with a PID of: 16011
+[Fri, 31 May 2013 16:26:28 GMT] INFO Code changed, killing 16011, cycling ...
+[Fri, 31 May 2013 16:26:28 GMT] INFO Creating 1 worker process.
+[Fri, 31 May 2013 16:26:28 GMT] INFO Server worker running in development on port 4000 with a PID of: 16016
+[Fri, 31 May 2013 16:27:33 GMT] INFO Code changed, killing 16016, cycling ...
+[Fri, 31 May 2013 16:27:33 GMT] INFO Creating 1 worker process.
+[Fri, 31 May 2013 16:27:33 GMT] INFO Server worker running in development on port 4000 with a PID of: 16030

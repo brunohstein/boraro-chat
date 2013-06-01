@@ -1,0 +1,5 @@
+[Wed, 29 May 2013 15:53:19 GMT] ERROR 127.0.0.1 - - [Wed May 29 2013 12:53:19 GMT-0300 (BRT)] "GET /login 1.1" 500 1428 "http://0.0.0.0:4000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.93 Safari/537.36"
+[Wed, 29 May 2013 15:55:21 GMT] ERROR 127.0.0.1 - - [Wed May 29 2013 12:55:21 GMT-0300 (BRT)] "GET /login 1.1" 500 1428 "http://0.0.0.0:4000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.93 Safari/537.36"
+[Wed, 29 May 2013 15:55:22 GMT] ERROR 127.0.0.1 - - [Wed May 29 2013 12:55:22 GMT-0300 (BRT)] "GET /login 1.1" 500 1428 "http://0.0.0.0:4000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.93 Safari/537.36"
+[Wed, 29 May 2013 15:55:22 GMT] ERROR 127.0.0.1 - - [Wed May 29 2013 12:55:22 GMT-0300 (BRT)] "GET /login 1.1" 500 1428 "http://0.0.0.0:4000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.93 Safari/537.36"
+[Wed, 29 May 2013 15:55:23 GMT] ERROR Worker 3333 died.

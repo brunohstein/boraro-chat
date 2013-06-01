@@ -1,0 +1,12 @@
+<% if (user) { %>
+  <h1>
+    Hello<% if (user.name) { %>, <%- linkTo(user.name, userPath(user.username)) %><% } %>
+  </h1>
+  <p>You've successfully logged in to this Geddy app (via <%= authType %>).</p>
+  <p><%- linkTo('Click here to log back out', logoutPath) %></p>
+<% } else { %>
+  <h1>Hello, stranger</h1>
+  <p>You're not authenticated with this app.</p>
+  <p><%- linkTo('Click here to create a user account.', addUserPath) %></p>
+  <p><%- linkTo('Click here to log in.', loginPath) %></p>
+<% } %>

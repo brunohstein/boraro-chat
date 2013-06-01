@@ -1,0 +1,6 @@
+<form id="login-form" action="<%= localPath %>" method="POST">  
+  <%- contentTag('input', params.username, {type: 'text', name: 'username', placeholder: 'Username'}) %>
+  <%- contentTag('input', params.password, {type: 'password', name: 'password', placeholder: 'Password'}) %>
+  <%- contentTag('input', 'Login', {type: 'submit'}) %>
+  <%- linkTo('New user', '/users/add') %>
+</form>

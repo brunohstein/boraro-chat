@@ -1,0 +1,13 @@
+<h2>All Messages</h2>
+
+<% if (messages) { %>
+  <ul>
+    <% for (var i = 0, ii = messages.length; i < ii; i++) { %>
+      <li>
+        <p><%= messages[i].body %></p>
+        <i><%= geddy.date.relativeTime(new Date(messages[i].createdAt)) %></i>
+        <b><%= messages[i].user.name %></b>
+      </li>
+    <% } %>
+  </ul>
+<% } %>

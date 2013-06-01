@@ -1,0 +1,13 @@
+<h2><%= user.name %></h2>
+<p><%= user.email %></p>
+<%- linkTo('Edit this user', editUserPath(params.user)); %>
+<%- linkTo('Add room', addRoomPath(params.user)); %>
+
+<h3>My rooms</h3>
+<ul>
+  <% for(var i in rooms) { %>
+    <li>
+      <a href="/<%= params.user %>/<%= rooms[i].slug %>"><%= rooms[i].title %></a>
+    </li>
+  <% } %>
+</ul>

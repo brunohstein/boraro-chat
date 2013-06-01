@@ -1,0 +1,2 @@
+[Wed, 29 May 2013 23:07:13 GMT] ERROR 127.0.0.1 - - [Wed May 29 2013 20:07:13 GMT-0300 (BRT)] "POST /rooms 1.1" 500 787 "http://0.0.0.0:4000/rooms/add" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.93 Safari/537.36"
+[Wed, 29 May 2013 23:07:13 GMT] ERROR Worker 801 died.

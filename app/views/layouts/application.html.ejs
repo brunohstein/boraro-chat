@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>boraro.chat</title>
+
+    <%- scriptLink('/js/jquery.min.js',    {type: 'text/javascript'}) %>
+    <%- scriptLink('/js/core/core.js',     {type: 'text/javascript'}) %>
+    <%- scriptLink('/js/core/models.js',   {type: 'text/javascript'}) %>
+    <%- scriptLink('/js/config/init.js',   {type: 'text/javascript'}) %>
+
+    <%- styleLink('/css/style.css',        {rel:'stylesheet'}) %>
+  </head>
+  <body>
+    <%- yield(); %>
+  </body>
+</html>

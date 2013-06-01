@@ -1,0 +1,10 @@
+<h2><%= room.title %></h2>
+<a href="/<%= params.user %>/<%= params.room %>/edit">Edit this room</a>
+
+<h3>Messages</h3>
+<ul>
+  <li>
+    <%- partial('messages/index', {params: params, messages: messages}); %>
+    <%- partial('messages/add', {params: params, messages: messages}); %>
+  </li>
+</ul>

@@ -31,6 +31,13 @@ var Main = function () {
     });
   };
 
+  this.ui = function (req, resp, params) {
+    this.respond(params, {
+      format: 'html',
+      template: 'app/views/main/ui'
+    });
+  }
+
 };
 
 exports.Main = Main;

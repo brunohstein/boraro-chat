@@ -2,6 +2,8 @@ var router = new geddy.RegExpRouter();
 
 router.get('/').to('main.index');
 
+router.get('/ui').to('main.ui');
+
 router.get('/login').to('main.login');
 router.get('/logout').to('main.logout');
 router.post('/auth/local').to('auth.local');

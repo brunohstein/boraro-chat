@@ -1,0 +1,28 @@
+body {
+  background: #f9f9f9;
+  font-family: $proxima;
+  font-size: 14px;
+  color: $gray;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+h1 {
+  font-family: $proximab;
+  font-size: 24px;
+  color: $grayd;
+  margin: 10px 0;
+}
+
+p {
+  font-family: $proxima;
+  font-size: 15px;
+  line-height: 21px;
+  color: $grayd;
+
+  & + p {
+    margin-top: 5px;
+  }
+}

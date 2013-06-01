@@ -21,7 +21,7 @@
         '<li id="' + message.id + '">',
           '<p>' + message.body + '</p>',
           '<i>' + geddy.date.relativeTime(new Date(message.createdAt)) + '</i>',
-          // '<b>' + message.user.name + '</b>', TODO: listar o nome do usuário após evento do socket.io
+          '<b>' + message.user.name + '</b>', /* TODO: listar o nome do usuário após evento do socket.io */
         '</li>'].join('');
       return $(template);
     };
@@ -35,7 +35,7 @@
       };
 
       this.update = function (message) {
-        $('#message-' + message.id).replaceWith(renderTemplate(message));
+        $('#message-' + message.id).replaceWith(renderTemplate2(message));
       };
 
       this.remove = function (id) {

@@ -41,6 +41,7 @@ var Rooms = function () {
           } else {
             geddy.model.User.first({id: self.session.get('userId')}, function (err, user) {
               user.addRoom(room);
+              
               user.save(function(err, data) {
                 self.redirect('/' + user.username);
               });

@@ -42,7 +42,7 @@ var Users = function () {
             params.errors = err;
             self.transfer('add');
           } else {
-            self.redirect({controller: 'users', action: 'show', user: user.username});
+            self.redirect({controller: 'main', action: 'login'});
           }
         });
       }

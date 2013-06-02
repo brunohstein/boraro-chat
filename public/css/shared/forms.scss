@@ -68,10 +68,25 @@ input[type="checkbox"], input[type="radio"] {
     font-size: 14px;
     line-height: 18px;
     font-family: $proxima;
+  }
+}
+
+input[type="checkbox"] {
+  & + label {
     background: url('/img/shared/forms/checkbox-radio-bg.png') no-repeat 0 0;
   }
 
   &:checked + label {
     background: url('/img/shared/forms/checkbox-radio-bg.png') no-repeat 0 -18px;
+  }
+}
+
+input[type="radio"] {
+  & + label {
+    background: url('/img/shared/forms/checkbox-radio-bg.png') no-repeat 0 -36px;
+  }
+
+  &:checked + label {
+    background: url('/img/shared/forms/checkbox-radio-bg.png') no-repeat 0 -54px;
   }
 }

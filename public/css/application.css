@@ -259,10 +259,17 @@ input[type="checkbox"], input[type="radio"] {
     color: #aaaaaa;
     font-size: 14px;
     line-height: 18px;
-    font-family: "Proxima Nova", sans-serif;
-    background: url("/img/shared/forms/checkbox-radio-bg.png") no-repeat 0 0; }
-  input[type="checkbox"]:checked + label, input[type="radio"]:checked + label {
-    background: url("/img/shared/forms/checkbox-radio-bg.png") no-repeat 0 -18px; }
+    font-family: "Proxima Nova", sans-serif; }
+
+input[type="checkbox"] + label {
+  background: url("/img/shared/forms/checkbox-radio-bg.png") no-repeat 0 0; }
+input[type="checkbox"]:checked + label {
+  background: url("/img/shared/forms/checkbox-radio-bg.png") no-repeat 0 -18px; }
+
+input[type="radio"] + label {
+  background: url("/img/shared/forms/checkbox-radio-bg.png") no-repeat 0 -36px; }
+input[type="radio"]:checked + label {
+  background: url("/img/shared/forms/checkbox-radio-bg.png") no-repeat 0 -54px; }
 
 .btn {
   border-radius: 5px;

@@ -171,9 +171,9 @@ body {
   color: #888888; }
   body a {
     text-decoration: none;
-    color: #59d9f0; }
+    color: #59d9f0;
+    transition: .25s; }
     body a:hover {
-      border-bottom: 1px dashed #8eeeff;
       color: #8eeeff; }
 
 h1 {

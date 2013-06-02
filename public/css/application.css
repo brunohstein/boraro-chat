@@ -258,8 +258,11 @@ input[type="checkbox"], input[type="radio"] {
     outline: 0;
     color: #aaaaaa;
     font-size: 14px;
-    line-height: 18px;
+    line-height: 20px;
     font-family: "Proxima Nova", sans-serif; }
+    input[type="checkbox"] + label:hover, input[type="radio"] + label:hover {
+      color: #888888;
+      transition: color .2s; }
 
 input[type="checkbox"] + label {
   background: url("/img/shared/forms/checkbox-radio-bg.png") no-repeat 0 0; }

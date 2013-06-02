@@ -66,8 +66,13 @@ input[type="checkbox"], input[type="radio"] {
     outline: 0;
     color: $grayl;
     font-size: 14px;
-    line-height: 18px;
+    line-height: 20px;
     font-family: $proxima;
+
+    &:hover {
+      color: $gray;
+      transition: color .2s;
+    }
   }
 }
 

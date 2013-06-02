@@ -12,11 +12,17 @@
     box-shadow: 0 1px 2px white inset;
     border: 1px solid #eeeeee;
     transition: .25s;
+    margin: 0;
 
     &:hover {
-      color: $gray;
+      color: $grayl;
       background: lighten(#f9f9f9, 1%);
       box-shadow: 0 1px 2px white inset, 0 1px 0 #f5f5f5;
+    }
+
+    &:active {
+      border: 1px solid #e5e5e5;
+      box-shadow: 0 1px 2px #e5e5e5 inset, 0 1px 0 white; 
     }
   }
 
@@ -30,7 +36,37 @@
     &:hover {
       color: white;
       background: lighten($blue, 5%);
-      box-shadow: 0 1px 2px $bluel inset, 0 1px 0 #e5e5e5;
+      box-shadow: 0 1px 2px $bluel inset, 0 1px 0 #dddddd;
     }
+
+    &:active {
+      border: 1px solid $blued;
+      box-shadow: 0 1px 2px $blued inset, 0 1px 0 white; 
+    }
+  }
+
+  &.danger {
+    color: #f9f9f9;
+    text-shadow: 0 0 0;
+    background: $red;
+    box-shadow: 0 1px 2px $redl inset;
+    border: 1px solid $redd;
+
+    &:hover {
+      color: white;
+      background: lighten($red, 3%);
+      box-shadow: 0 1px 2px $redl inset, 0 1px 0 #dddddd;
+    }
+
+    &:active {
+      border: 1px solid $redd;
+      box-shadow: 0 1px 2px $redd inset, 0 1px 0 white;
+    }
+  }
+
+  &.disabled, &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: default;
   }
 }

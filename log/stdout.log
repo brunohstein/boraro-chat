@@ -1,4 +1,4 @@
-[Sat, 01 Jun 2013 21:47:11 GMT] INFO Server starting with config: {
+[Sun, 02 Jun 2013 02:47:15 GMT] INFO Server starting with config: {
   "environment": "development",
   "workers": 1,
   "port": 4000,
@@ -59,35 +59,5 @@
   },
   "secret": "nBdksZvScvWOBSKzhnEEomC6s0DaSZxuhPK9fBb8O4hfpZIYrmexZYlnRQCexGa5PHxx9a884TouqGFWXaTpRDv4BeDWg7W0sN1rpO2A1fG9hrBDMy7I9ljPnGFBNjLB"
 }
-[Sat, 01 Jun 2013 21:47:11 GMT] INFO Creating 1 worker process.
-[Sat, 01 Jun 2013 21:47:11 GMT] INFO Server worker running in development on port 4000 with a PID of: 8044
-[Sat, 01 Jun 2013 21:47:26 GMT] INFO Code changed, killing 8044, cycling ...
-[Sat, 01 Jun 2013 21:47:26 GMT] INFO Creating 1 worker process.
-[Sat, 01 Jun 2013 21:47:26 GMT] INFO Server worker running in development on port 4000 with a PID of: 8051
-[Sat, 01 Jun 2013 21:47:41 GMT] INFO Code changed, killing 8051, cycling ...
-[Sat, 01 Jun 2013 21:47:41 GMT] INFO Creating 1 worker process.
-[Sat, 01 Jun 2013 21:47:41 GMT] INFO Server worker running in development on port 4000 with a PID of: 8056
-[Sat, 01 Jun 2013 21:47:46 GMT] INFO Code changed, killing 8056, cycling ...
-[Sat, 01 Jun 2013 21:47:46 GMT] INFO Creating 1 worker process.
-[Sat, 01 Jun 2013 21:47:46 GMT] INFO Server worker running in development on port 4000 with a PID of: 8061
-[Sat, 01 Jun 2013 22:03:17 GMT] INFO Code changed, killing 8061, cycling ...
-[Sat, 01 Jun 2013 22:03:17 GMT] INFO Creating 1 worker process.
-[Sat, 01 Jun 2013 22:03:18 GMT] INFO Server worker running in development on port 4000 with a PID of: 8578
-[Sat, 01 Jun 2013 22:03:47 GMT] INFO Code changed, killing 8578, cycling ...
-[Sat, 01 Jun 2013 22:03:47 GMT] INFO Creating 1 worker process.
-[Sat, 01 Jun 2013 22:03:48 GMT] INFO Server worker running in development on port 4000 with a PID of: 8585
-[Sat, 01 Jun 2013 22:03:52 GMT] INFO Code changed, killing 8585, cycling ...
-[Sat, 01 Jun 2013 22:03:52 GMT] INFO Creating 1 worker process.
-[Sat, 01 Jun 2013 22:03:53 GMT] INFO Server worker running in development on port 4000 with a PID of: 8590
-[Sat, 01 Jun 2013 22:04:07 GMT] INFO Code changed, killing 8590, cycling ...
-[Sat, 01 Jun 2013 22:04:07 GMT] INFO Creating 1 worker process.
-[Sat, 01 Jun 2013 22:04:08 GMT] INFO Server worker running in development on port 4000 with a PID of: 8596
-[Sat, 01 Jun 2013 22:04:17 GMT] INFO Code changed, killing 8596, cycling ...
-[Sat, 01 Jun 2013 22:04:17 GMT] INFO Creating 1 worker process.
-[Sat, 01 Jun 2013 22:04:18 GMT] INFO Server worker running in development on port 4000 with a PID of: 8601
-[Sat, 01 Jun 2013 22:04:22 GMT] INFO Code changed, killing 8601, cycling ...
-[Sat, 01 Jun 2013 22:04:22 GMT] INFO Creating 1 worker process.
-[Sat, 01 Jun 2013 22:04:23 GMT] INFO Server worker running in development on port 4000 with a PID of: 8606
-[Sat, 01 Jun 2013 22:05:27 GMT] INFO Code changed, killing 8606, cycling ...
-[Sat, 01 Jun 2013 22:05:27 GMT] INFO Creating 1 worker process.
-[Sat, 01 Jun 2013 22:05:28 GMT] INFO Server worker running in development on port 4000 with a PID of: 8619
+[Sun, 02 Jun 2013 02:47:15 GMT] INFO Creating 1 worker process.
+[Sun, 02 Jun 2013 02:47:15 GMT] INFO Server worker running in development on port 4000 with a PID of: 9078

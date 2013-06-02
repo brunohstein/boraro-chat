@@ -6,20 +6,41 @@ input[type="text"], input[type="email"], input[type="password"], textarea {
   color: $grayl;
   font-size: 14px;
   font-family: $proxima;
+  display: block;
 
-  ::-webkit-input-placeholder { color: $grayl; }
-  :-moz-placeholder           { color: $grayl; }
-  ::-moz-placeholder          { color: $grayl; }
-  :-ms-input-placeholder      { color: $grayl; }
+  &::-webkit-input-placeholder { color: $grayl; }
+  &:-moz-placeholder           { color: $grayl; }
+  &::-moz-placeholder          { color: $grayl; }
+  &:-ms-input-placeholder      { color: $grayl; }
 
   &:hover {
     box-shadow: 0 1px 0 #f5f5f5;
     color: $gray;
+
+    &::-webkit-input-placeholder { color: $gray; }
+    &:-moz-placeholder           { color: $gray; }
+    &::-moz-placeholder          { color: $gray; }
+    &:-ms-input-placeholder      { color: $gray; }
   }
 
   &:focus {
     box-shadow: 0 1px 2px #eeeeee inset;
     color: $gray;
     outline: 0;
+
+    &::-webkit-input-placeholder { color: #eeeeee; }
+    &:-moz-placeholder           { color: #eeeeee; }
+    &::-moz-placeholder          { color: #eeeeee; }
+    &:-ms-input-placeholder      { color: #eeeeee; }
   }
+
+  &.inline {
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+
+textarea {
+  min-height: 50px;
+  resize: none;
 }

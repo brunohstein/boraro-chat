@@ -172,7 +172,7 @@ body {
   body a {
     text-decoration: none;
     color: #59d9f0;
-    transition: .25s; }
+    transition: .2s; }
     body a:hover {
       color: #8eeeff; }
 
@@ -283,7 +283,7 @@ input[type="radio"]:checked + label {
     background: #f9f9f9;
     box-shadow: 0 1px 2px white inset;
     border: 1px solid #eeeeee;
-    transition: .25s;
+    transition: .2s;
     margin: 0; }
     .btn.btn:hover {
       color: #aaaaaa;

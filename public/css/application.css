@@ -170,7 +170,11 @@ body {
   font-size: 14px;
   color: #888888; }
   body a {
-    text-decoration: none; }
+    text-decoration: none;
+    color: #59d9f0; }
+    body a:hover {
+      text-decoration: underline;
+      color: #8eeeff; }
 
 h1 {
   font-family: "Proxima Nova Bold", sans-serif;
@@ -231,8 +235,13 @@ input[type="text"], input[type="email"], input[type="password"], textarea {
     vertical-align: top; }
 
 textarea {
-  min-height: 50px;
-  resize: none; }
+  padding-top: 12px;
+  padding-bottom: 0;
+  min-height: 63px;
+  line-height: 21px;
+  overflow: hidden;
+  resize: none;
+  background: white url("/img/shared/forms/textarea-bg.png") repeat; }
 
 .btn {
   border-radius: 5px;

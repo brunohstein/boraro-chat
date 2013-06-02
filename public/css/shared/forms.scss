@@ -41,6 +41,11 @@ input[type="text"], input[type="email"], input[type="password"], textarea {
 }
 
 textarea {
-  min-height: 50px;
+  padding-top: 12px;
+  padding-bottom: 0;
+  min-height: 63px;
+  line-height: 21px;
+  overflow: hidden;
   resize: none;
+  background: white url('/img/shared/forms/textarea-bg.png') repeat;
 }

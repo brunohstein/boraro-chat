@@ -200,13 +200,17 @@ input[type="text"], input[type="email"], input[type="password"], textarea {
   font-family: "Proxima Nova", sans-serif;
   display: block; }
   input[type="text"]::-webkit-input-placeholder, input[type="email"]::-webkit-input-placeholder, input[type="password"]::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
-    color: #aaaaaa; }
+    color: #aaaaaa;
+    transition: .2s; }
   input[type="text"]:-moz-placeholder, input[type="email"]:-moz-placeholder, input[type="password"]:-moz-placeholder, textarea:-moz-placeholder {
-    color: #aaaaaa; }
+    color: #aaaaaa;
+    transition: .2s; }
   input[type="text"]::-moz-placeholder, input[type="email"]::-moz-placeholder, input[type="password"]::-moz-placeholder, textarea::-moz-placeholder {
-    color: #aaaaaa; }
+    color: #aaaaaa;
+    transition: .2s; }
   input[type="text"]:-ms-input-placeholder, input[type="email"]:-ms-input-placeholder, input[type="password"]:-ms-input-placeholder, textarea:-ms-input-placeholder {
-    color: #aaaaaa; }
+    color: #aaaaaa;
+    transition: .2s; }
   input[type="text"]:hover, input[type="email"]:hover, input[type="password"]:hover, textarea:hover {
     box-shadow: 0 1px 0 #f5f5f5;
     color: #888888; }

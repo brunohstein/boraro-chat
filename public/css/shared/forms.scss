@@ -1,0 +1,97 @@
+input[type="text"], input[type="email"], input[type="password"], textarea {
+  border-radius: 5px;
+  background: white;
+  border: 1px solid #eeeeee;
+  padding: 15px;
+  color: $grayl;
+  font-size: 14px;
+  font-family: $proxima;
+  display: block;
+
+  &::-webkit-input-placeholder { color: $grayl; transition: .2s; }
+  &:-moz-placeholder           { color: $grayl; transition: .2s; }
+  &::-moz-placeholder          { color: $grayl; transition: .2s; }
+  &:-ms-input-placeholder      { color: $grayl; transition: .2s; }
+
+  &:hover {
+    box-shadow: 0 1px 0 #f5f5f5;
+    color: $gray;
+
+    &::-webkit-input-placeholder { color: $gray; }
+    &:-moz-placeholder           { color: $gray; }
+    &::-moz-placeholder          { color: $gray; }
+    &:-ms-input-placeholder      { color: $gray; }
+  }
+
+  &:focus {
+    box-shadow: 0 1px 2px #eeeeee inset;
+    color: $gray;
+    outline: 0;
+
+    &::-webkit-input-placeholder { color: #eeeeee; }
+    &:-moz-placeholder           { color: #eeeeee; }
+    &::-moz-placeholder          { color: #eeeeee; }
+    &:-ms-input-placeholder      { color: #eeeeee; }
+  }
+
+  &.inline {
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+
+textarea {
+  padding-top: 12px;
+  padding-bottom: 0;
+  min-height: 63px;
+  line-height: 21px;
+  overflow: hidden;
+  resize: none;
+  background: white url('/img/shared/forms/textarea-bg.png') repeat;
+}
+
+input[type="checkbox"], input[type="radio"] {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  margin: 0;
+  outline: 0;
+  cursor: pointer;
+
+  & + label {
+    padding-left: 23px;
+    display: inline-block;
+    height: 18px;
+    margin-left: -12px;
+    cursor: pointer;
+    outline: 0;
+    color: $grayl;
+    font-size: 14px;
+    line-height: 20px;
+    font-family: $proxima;
+
+    &:hover {
+      color: $gray;
+      transition: color .2s;
+    }
+  }
+}
+
+input[type="checkbox"] {
+  & + label {
+    background: url('/img/shared/forms/checkbox-radio-bg.png') no-repeat 0 0;
+  }
+
+  &:checked + label {
+    background: url('/img/shared/forms/checkbox-radio-bg.png') no-repeat 0 -18px;
+  }
+}
+
+input[type="radio"] {
+  & + label {
+    background: url('/img/shared/forms/checkbox-radio-bg.png') no-repeat 0 -36px;
+  }
+
+  &:checked + label {
+    background: url('/img/shared/forms/checkbox-radio-bg.png') no-repeat 0 -54px;
+  }
+}

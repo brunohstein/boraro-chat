@@ -49,3 +49,29 @@ textarea {
   resize: none;
   background: white url('/img/shared/forms/textarea-bg.png') repeat;
 }
+
+input[type="checkbox"], input[type="radio"] {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  margin: 0;
+  outline: 0;
+  cursor: pointer;
+
+  & + label {
+    padding-left: 23px;
+    display: inline-block;
+    height: 18px;
+    margin-left: -12px;
+    cursor: pointer;
+    outline: 0;
+    color: $grayl;
+    font-size: 14px;
+    line-height: 18px;
+    font-family: $proxima;
+    background: url('/img/shared/forms/checkbox-radio-bg.png') no-repeat 0 0;
+  }
+
+  &:checked + label {
+    background: url('/img/shared/forms/checkbox-radio-bg.png') no-repeat 0 -18px;
+  }
+}

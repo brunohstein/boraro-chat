@@ -21,14 +21,3 @@ h1 {
   color: $grayd;
   margin: 10px 0;
 }
-
-p {
-  font-family: $proxima;
-  font-size: 15px;
-  line-height: 21px;
-  color: $grayd;
-
-  & + p {
-    margin-top: 5px;
-  }
-}

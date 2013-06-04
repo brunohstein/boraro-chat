@@ -1,7 +1,22 @@
 <div class="row rooms show">
-  <div class="span span5 sidebar box">
-    <h1><%= room.title %></h1>
-    <a href="/<%= params.user %>/<%= params.room %>/edit">Edit this room</a>
+  <div class="span span5 sidebar">
+    <div class="background">
+      <img src="/img/shared/default-room-avatar.png" class="avatar">
+      <div class="fade"></div>
+    </div>
+    <div class="content">
+      <h1><%= room.title %></h1>
+    </div>
+
+    <div class="actions">
+      <a class="btn" href="/<%= params.user %>/<%= params.room %>/edit">Edit this room</a>
+      <a class="btn" href="#invite" data-modal="invite">Invite people to join</a>
+      <div class="modal" id="invite">
+        <div class="body">
+          <h1>Soon.</h1>
+        </div>
+      </div>
+    </div>
   </div>
   
   <div class="span span11">

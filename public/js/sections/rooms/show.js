@@ -14,15 +14,17 @@ var RoomsShow = {
 
   bind: function() {
     RoomsShow.ui.submit.click(function() {
-      RoomsShow.clear();
-      RoomsShow.scroll();
+      setTimeout(function() {
+        RoomsShow.clear();
+        RoomsShow.scroll();
+      }, 100);
     });
 
     RoomsShow.ui.textarea.keypress(function(e) {
       if (e.which == 13) {
         RoomsShow.ui.form.submit();
         RoomsShow.clear();
-        RoomsShow.scroll();
+        RoomsShow.scroll(true);
         return false;
       }
     });
@@ -32,10 +34,16 @@ var RoomsShow = {
     RoomsShow.ui.textarea.val('');
   },
 
-  scroll: function() {
-    RoomsShow.ui.list.animate({
-      scrollTop: RoomsShow.ui.list[0].scrollHeight
-    }, 1000);
+  scroll: function(animated) {
+    if (animated) {
+      setTimeout(function() {
+        RoomsShow.ui.list.animate({
+          scrollTop: RoomsShow.ui.list[0].scrollHeight
+        }, 1000);
+      }, 150);
+    } else {
+      RoomsShow.ui.list.scrollTop(RoomsShow.ui.list[0].scrollHeight);
+    }
   }
 
 };

@@ -1,13 +1,27 @@
 <div class="row messages index">
-  <div class="span box">
+  <div class="span">
     <% if (messages) { %>
       <ul class="list">
         <% for (var i = 0, ii = messages.length; i < ii; i++) { %>
-          <li id="message-<%= messages[i].id %>">
-            <p><%= messages[i].body %></p>
-            <i><%= geddy.date.relativeTime(new Date(messages[i].createdAt)) %></i>
-            <b><%= messages[i].user.name %></b>
-          </li>
+          <% if (geddy.currentUser.id == messages[i].userId) { %>
+            <li id="message-<%= messages[i].id %>" class="self">
+              <p class="body"><%= messages[i].body %></p>
+              <img class="avatar" src="/img/shared/default-user-avatar.png">
+              <div class="info">
+                <h2 class="name"><%= messages[i].user.name %></h2>
+                <span class="time"><%= geddy.date.relativeTime(new Date(messages[i].createdAt)) %></span>
+              </div>
+            </li>
+          <% } else { %>
+            <li id="message-<%= messages[i].id %>" class="other">
+              <p class="body"><%= messages[i].body %></p>
+              <div class="info">
+                <h2 class="name"><%= messages[i].user.name %></h2>
+                <span class="time"><%= geddy.date.relativeTime(new Date(messages[i].createdAt)) %></span>
+              </div>
+              <img class="avatar" src="/img/shared/default-user-avatar.png">
+            </li>
+          <% } %>
         <% } %>
       </ul>
     <% } %>

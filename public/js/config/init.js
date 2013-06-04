@@ -11,8 +11,12 @@ geddy.io.addListenersForModels(['Message']);
 var renderTemplate = function(message) {
   var template = [
     '<li id="message-' + message.id + '">',
-      '<p>' + message.body + '</p>',
-      '<i>' + geddy.date.relativeTime(new Date(message.createdAt)) + '</i>',
+      '<p class="body">' + message.body + '</p>',
+      '<img class="avatar" src="/img/shared/default-user-avatar.png">',
+      '<div class="info">',
+        '<h2 class="name"></h2>',
+        '<span class="time">' + geddy.date.relativeTime(new Date(message.createdAt)) + '</span>',
+      '</div>',
     '</li>'].join('');
   return $(template);
 };
@@ -23,11 +27,13 @@ var MessagesController = function (opts) {
 
   this.create = function (message) {
     $('.list').append(renderTemplate(message));
+    RoomsShow.scroll();
   };
 
   this.update = function (message) {
     $('#message-' + message.id).replaceWith(renderTemplate(message));
     renderUser(message);
+    renderAvatar(message);
   };
 
   this.remove = function (id) {
@@ -37,7 +43,11 @@ var MessagesController = function (opts) {
 
 var renderUser = function(message) {
   var data = $.parseJSON(httpGet('http://' + location.host + '/' + message.userId + '.json'));
-  $('#message-' + message.id).append(' <b>' + data.user.name + '</b>');
+  $('#message-' + message.id).find('.name').text(data.user.name);
+};
+
+var renderAvatar = function(message) {
+  $('#message-' + message.id).find('.avatar').attr('src', '/img/shared/default-user-avatar.png'); // TODO: avatar não está aparecendo em nova mensagem
 };
 
 geddy.Messages = new MessagesController();

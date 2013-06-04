@@ -10,7 +10,7 @@ router.post('/auth/local').to('auth.local');
 
 router.get('/users').to('users.index');
 router.get('/users/add').to('users.add');
-router.get('/:user').to('users.show');
+router.get('/:user(.:format)').to('users.show');
 router.get('/:user/edit').to('users.edit');
 router.post('/users').to('users.create');
 router.put('/:user').to('users.update');

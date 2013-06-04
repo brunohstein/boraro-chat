@@ -1,6 +1,8 @@
-$.getScript('/js/core/core.js');
-$.getScript('/js/core/models.js');
-$.getScript('/js/config/init.js');
+$.getScript('/js/core/core.js', function() {
+  $.getScript('/js/core/models.js', function() {
+    $.getScript('/js/config/init.js');
+  });
+});
 
 $.getScript('/js/shared/modals.js');
 

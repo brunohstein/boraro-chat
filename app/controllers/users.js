@@ -53,18 +53,33 @@ var Users = function () {
     helpers.currentUser(this.session);
     var self = this;
 
-    geddy.model.User.first({username: params.user}, function(err, user) {
-      if (!user) {
-        var err = new Error();
-        err.statusCode = 400;
-        self.error(err);
-      } else {
-        user.password = '';
-        user.getRooms(function (err, rooms) {
-          self.respond({params: params, user: user, rooms: rooms});
-        });
-      }
-    });
+    if (helpers.isId(params.user)) {
+      geddy.model.User.first({id: params.user}, function(err, user) {
+        if (!user) {
+          var err = new Error();
+          err.statusCode = 400;
+          self.error(err);
+        } else {
+          user.password = '';
+          user.getRooms(function (err, rooms) {
+            self.respond({params: params, user: user, rooms: rooms});
+          });
+        }
+      });
+    } else {
+      geddy.model.User.first({username: params.user}, function(err, user) {
+        if (!user) {
+          var err = new Error();
+          err.statusCode = 400;
+          self.error(err);
+        } else {
+          user.password = '';
+          user.getRooms(function (err, rooms) {
+            self.respond({params: params, user: user, rooms: rooms});
+          });
+        }
+      });
+    };
   };
 
   this.edit = function (req, resp, params) {

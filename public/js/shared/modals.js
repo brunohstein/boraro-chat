@@ -1,6 +1,6 @@
 $(function() {
   $('[data-modal]').click(function() {
-    var modal = $($(this).data('modal'));
+    var modal = $('#' + $(this).data('modal'));
     modal.fadeIn();
     return false;
   });

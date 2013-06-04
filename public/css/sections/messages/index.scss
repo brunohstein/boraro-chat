@@ -1,0 +1,133 @@
+.messages.index {
+  ul {
+    height: 530px;
+    overflow: auto;
+    background: white;
+    border: 1px solid #eeeeee;
+    border-radius: 5px;
+    padding: 0 20px;
+    box-sizing: border-box;
+
+    &:hover {
+      &::-webkit-scrollbar-thumb {
+        background-color: #c2c2c2 !important;
+
+        &:hover {
+          background-color: #7e7e7e !important;
+        }
+      }      
+    }
+
+    &::-webkit-scrollbar {
+      -webkit-appearance: none !important;
+      width: 13px !important;
+      background: white !important;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 18px !important;
+      border: 3px solid white !important;
+      background-color: transparent !important;
+    }
+  }
+
+  li {
+    display: block;
+    margin: 20px 0;
+    overflow: hidden;
+    width: 484px;
+
+    &.self {
+      text-align: left;
+
+      .avatar {
+        margin-right: 6px;
+      }
+
+      & + .other {
+        margin-top: -90px;
+      }
+    }
+
+    &.other {
+      text-align: right;
+
+      .body {
+        margin-left: 276px;
+      }
+
+      .avatar {
+        margin-left: 6px;
+      }
+
+      & + .self {
+        margin-top: -90px;
+      }
+    }
+
+    .body {
+      height: auto;
+      width: 208px;
+      padding: 0 15px;
+      border-left: 1px solid #eeeeee;
+      border-right: 1px solid #eeeeee;
+      color: $grayd;
+      font-size: 15px;
+      line-height: 21px;
+      display: block;
+      position: relative;
+      box-sizing: border-box;
+      margin: 12px 0 32px;
+
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: -1px;
+        top: -12px;
+        width: 208px;
+        height: 12px;
+        background: url('/img/sections/messages/body-border-top.png') no-repeat;
+      }
+
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: -1px;
+        bottom: -32px;
+        width: 208px;
+        height: 32px;
+        background: url('/img/sections/messages/body-border-bottom.png') no-repeat;
+      }
+
+      img {
+        width: 178px;
+      }
+    }
+
+    .avatar {
+      width: 47px;
+      height: 47px;
+      display: inline-block;
+      vertical-align: middle;
+      border-radius: 5px;
+      overflow: hidden;
+      border: 1px solid #888888;
+    }
+
+    .info {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 14px;
+      color: $grayl;
+      line-height: 19px;
+
+      .time {
+        font-size: 13px;
+        font-family: $proximal;
+        font-style: italic;
+      }
+    }
+  }
+}

@@ -61,6 +61,9 @@ table {
 .align-right {
   text-align: right; }
 
+body {
+  padding: 30px 0; }
+
 .row {
   width: 1176px;
   margin-left: auto;
@@ -74,6 +77,7 @@ table {
     margin-top: 10px; }
 
 .span {
+  width: 100%;
   float: none;
   margin-left: 0;
   display: inline-block;
@@ -182,14 +186,6 @@ h1 {
   color: #666666;
   margin: 10px 0; }
 
-p {
-  font-family: "Proxima Nova", sans-serif;
-  font-size: 15px;
-  line-height: 21px;
-  color: #666666; }
-  p + p {
-    margin-top: 5px; }
-
 input[type="text"], input[type="email"], input[type="password"], textarea {
   border-radius: 5px;
   background: white;
@@ -198,7 +194,9 @@ input[type="text"], input[type="email"], input[type="password"], textarea {
   color: #aaaaaa;
   font-size: 14px;
   font-family: "Proxima Nova", sans-serif;
-  display: block; }
+  display: block;
+  box-sizing: border-box;
+  margin: 0; }
   input[type="text"]::-webkit-input-placeholder, input[type="email"]::-webkit-input-placeholder, input[type="password"]::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
     color: #aaaaaa;
     transition: .2s; }
@@ -240,8 +238,8 @@ input[type="text"], input[type="email"], input[type="password"], textarea {
 
 textarea {
   padding-top: 12px;
-  padding-bottom: 0;
-  min-height: 63px;
+  padding-bottom: 10px;
+  min-height: 85px;
   line-height: 21px;
   overflow: hidden;
   resize: none;
@@ -348,7 +346,8 @@ input[type="radio"]:checked + label {
     background: white;
     border-radius: 5px;
     border: 1px solid #333333;
-    padding: 15px; }
+    padding: 15px;
+    box-shadow: 0 0px 8px #333333; }
   .modal .close {
     position: absolute;
     top: 10px;
@@ -363,3 +362,164 @@ input[type="radio"]:checked + label {
 
 .ui {
   margin: 30px 0; }
+
+.rooms.show .sidebar {
+  position: relative;
+  text-align: center;
+  height: 625px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: #aaaaaa;
+  background: -moz-linear-gradient(top, #aaaaaa 0%, #eeeeee 45%, #eeeeee 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #aaaaaa), color-stop(45%, #eeeeee), color-stop(100%, #eeeeee));
+  background: -webkit-linear-gradient(top, #aaaaaa 0%, #eeeeee 45%, #eeeeee 100%);
+  background: -o-linear-gradient(top, #aaaaaa 0%, #eeeeee 45%, #eeeeee 100%);
+  background: -ms-linear-gradient(top, #aaaaaa 0%, #eeeeee 45%, #eeeeee 100%);
+  background: linear-gradient(to bottom, #aaaaaa 0%, #eeeeee 45%, #eeeeee 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#aaaaaa', endColorstr='#eeeeee',GradientType=0 ); }
+  .rooms.show .sidebar .background {
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 224px;
+    height: 623px;
+    z-index: 0;
+    background: white;
+    border-radius: 5px; }
+    .rooms.show .sidebar .background .avatar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      max-width: 200%;
+      min-height: 300px; }
+    .rooms.show .sidebar .background .fade {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 45%, white 95%, white 100%);
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(45%, white), color-stop(95%, white), color-stop(100%, white));
+      background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 45%, white 95%, white 100%);
+      background: -o-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 45%, white 95%, white 100%);
+      background: -ms-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 45%, white 95%, white 100%);
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, white 45%, white 95%, white 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ); }
+  .rooms.show .sidebar .content {
+    position: absolute;
+    top: 280px;
+    width: 100%;
+    z-index: 1; }
+  .rooms.show .sidebar .actions {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+    padding: 10px; }
+    .rooms.show .sidebar .actions .btn {
+      width: 160px;
+      display: block;
+      margin-top: 5px; }
+
+.messages.add {
+  position: relative; }
+  .messages.add textarea {
+    width: 100%;
+    padding-right: 100px; }
+  .messages.add .btn.primary {
+    position: absolute;
+    top: 10px;
+    right: 10px; }
+
+.messages.index ul {
+  height: 530px;
+  overflow: auto;
+  background: white;
+  border: 1px solid #eeeeee;
+  border-radius: 5px;
+  padding: 0 20px;
+  box-sizing: border-box; }
+  .messages.index ul:hover::-webkit-scrollbar-thumb {
+    background-color: #c2c2c2 !important; }
+    .messages.index ul:hover::-webkit-scrollbar-thumb:hover {
+      background-color: #7e7e7e !important; }
+  .messages.index ul::-webkit-scrollbar {
+    -webkit-appearance: none !important;
+    width: 13px !important;
+    background: white !important; }
+  .messages.index ul::-webkit-scrollbar-thumb {
+    border-radius: 18px !important;
+    border: 3px solid white !important;
+    background-color: transparent !important; }
+.messages.index li {
+  display: block;
+  margin: 20px 0;
+  overflow: hidden;
+  width: 484px; }
+  .messages.index li.self {
+    text-align: left; }
+    .messages.index li.self .avatar {
+      margin-right: 6px; }
+    .messages.index li.self + .other {
+      margin-top: -90px; }
+  .messages.index li.other {
+    text-align: right; }
+    .messages.index li.other .body {
+      margin-left: 276px; }
+    .messages.index li.other .avatar {
+      margin-left: 6px; }
+    .messages.index li.other + .self {
+      margin-top: -90px; }
+  .messages.index li .body {
+    height: auto;
+    width: 208px;
+    padding: 0 15px;
+    border-left: 1px solid #eeeeee;
+    border-right: 1px solid #eeeeee;
+    color: #666666;
+    font-size: 15px;
+    line-height: 21px;
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+    margin: 12px 0 32px; }
+    .messages.index li .body:before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: -1px;
+      top: -12px;
+      width: 208px;
+      height: 12px;
+      background: url("/img/sections/messages/body-border-top.png") no-repeat; }
+    .messages.index li .body:after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: -1px;
+      bottom: -32px;
+      width: 208px;
+      height: 32px;
+      background: url("/img/sections/messages/body-border-bottom.png") no-repeat; }
+    .messages.index li .body img {
+      width: 178px; }
+  .messages.index li .avatar {
+    width: 47px;
+    height: 47px;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid #888888; }
+  .messages.index li .info {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 14px;
+    color: #aaaaaa;
+    line-height: 19px; }
+    .messages.index li .info .time {
+      font-size: 13px;
+      font-family: "Proxima Nova Light", sans-serif;
+      font-style: italic; }

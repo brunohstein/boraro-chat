@@ -1,13 +1,17 @@
-<form id="message-form" class="form-horizontal" action="/<%= params.user %>/<%= params.room %>" method="POST">
-  <% if(params.errors) { %>
-    <ul>
-      <% for(var err in params.errors) { %>
-        <li><%= params.errors[err]; %></li>
+<div class="row messages add">
+  <div class="span">
+    <form class="form" action="/<%= params.user %>/<%= params.room %>" method="POST">
+      <% if(params.errors) { %>
+        <ul>
+          <% for(var err in params.errors) { %>
+            <li><%= params.errors[err]; %></li>
+          <% } %>
+        </ul>
       <% } %>
-    </ul>
-  <% } %>
-  
-  <%= partial('messages/_form', {message: params}); %>
-  
-  <%- contentTag('input', 'Send', {type: 'submit'}) %>
-</form>
+      
+      <%= partial('messages/_form', {message: params}); %>
+      
+      <%- contentTag('input', 'Send', {type: 'submit', class: 'btn primary send'}) %>
+    </form>
+  </div>
+</div>

@@ -29,7 +29,9 @@
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;
+        min-width: 100%;
+        max-width: 200%;
+        min-height: 300px;
       }
 
       .fade {

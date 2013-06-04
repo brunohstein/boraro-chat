@@ -14,5 +14,17 @@ module.exports = {
       .replace(/-+/g, '-');
 
     return str;
+  },
+
+  currentUser: function(session) {
+    geddy.model.User.first({id: session.get('userId')}, function (err, user) {
+      if (user) {
+        geddy.currentUser = user;
+      }
+    });
+  },
+
+  isId: function(str) {
+    return /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/.test(str);
   }
 }

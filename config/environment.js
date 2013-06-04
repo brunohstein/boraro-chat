@@ -1,5 +1,5 @@
 var config = {
-  // realtime: true
+  realtime: true
 };
 
 module.exports = config;

@@ -1,15 +1,15 @@
 var passport = require('../helpers/passport'),
     cryptPass = passport.cryptPass,
-    requireAuth = passport.requireAuth;
+    requireAuth = passport.requireAuth,
+    helpers = require('../helpers/application');
 
 var Rooms = function () {
   this.before(requireAuth);
 
   this.respondsWith = ['html', 'json', 'xml', 'js', 'txt'];
 
-  var helpers = this.helpers;
-
   this.index = function (req, resp, params) {
+    helpers.currentUser(this.session);
     var self = this;
 
     geddy.model.Room.all(function(err, rooms) {
@@ -41,6 +41,7 @@ var Rooms = function () {
           } else {
             geddy.model.User.first({id: self.session.get('userId')}, function (err, user) {
               user.addRoom(room);
+              
               user.save(function(err, data) {
                 self.redirect('/' + user.username);
               });
@@ -52,6 +53,7 @@ var Rooms = function () {
   };
 
   this.show = function (req, resp, params) {
+    helpers.currentUser(this.session);
     var self = this;
 
     geddy.model.Room.first({slug: params.room}, function(err, room) {
@@ -60,17 +62,23 @@ var Rooms = function () {
         err.statusCode = 400;
         self.error(err);
       } else {
-        geddy.model.Message.all({roomId: room.id}, function(err, data) {
+        geddy.model.Message.all({roomId: room.id}, {sort: {createdAt: 'asc'}}, function(err, data) {
           var messages = [];
 
-          data.forEach(function(message) {
-            message.getUser(function(err, user) {
-              message['user'] = user;
-              messages.push(message);
-            });
-          });
+          if (data.length > 0) {
+            data.forEach(function(message) {
+              message.getUser(function(err, user) {
+                message['user'] = user;
+                messages.push(message);
 
-          self.respond({params: params, room: room, messages: messages});
+                if (messages.length == data.length) {
+                  self.respond({params: params, room: room, messages: messages});
+                }
+              });
+            });
+          } else {
+            self.respond({params: params, room: room, messages: messages});
+          }
         });
       }
     });

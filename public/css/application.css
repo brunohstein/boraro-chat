@@ -455,7 +455,7 @@ input[type="radio"]:checked + label {
   display: block;
   margin: 20px 0;
   overflow: hidden;
-  width: 485px; }
+  width: 484px; }
   .messages.index li.self {
     text-align: left; }
     .messages.index li.self .avatar {
@@ -465,7 +465,7 @@ input[type="radio"]:checked + label {
   .messages.index li.other {
     text-align: right; }
     .messages.index li.other .body {
-      margin-left: 277px; }
+      margin-left: 276px; }
     .messages.index li.other .avatar {
       margin-left: 6px; }
     .messages.index li.other + .self {

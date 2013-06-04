@@ -1,13 +1,15 @@
-<h2>All Messages</h2>
-
-<% if (messages) { %>
-  <ul id="messages-list">
-    <% for (var i = 0, ii = messages.length; i < ii; i++) { %>
-      <li id="message-<%= messages[i].id %>">
-        <p><%= messages[i].body %></p>
-        <i><%= geddy.date.relativeTime(new Date(messages[i].createdAt)) %></i>
-        <b><%= messages[i].user.name %></b>
-      </li>
+<div class="row messages index">
+  <div class="span box">
+    <% if (messages) { %>
+      <ul class="list">
+        <% for (var i = 0, ii = messages.length; i < ii; i++) { %>
+          <li id="message-<%= messages[i].id %>">
+            <p><%= messages[i].body %></p>
+            <i><%= geddy.date.relativeTime(new Date(messages[i].createdAt)) %></i>
+            <b><%= messages[i].user.name %></b>
+          </li>
+        <% } %>
+      </ul>
     <% } %>
-  </ul>
-<% } %>
+  </div>
+</div>

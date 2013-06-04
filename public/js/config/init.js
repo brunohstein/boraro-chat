@@ -22,7 +22,7 @@ var MessagesController = function (opts) {
   this.options = opts || {};
 
   this.create = function (message) {
-    $('#messages-list').append(renderTemplate(message));
+    $('.list').append(renderTemplate(message));
   };
 
   this.update = function (message) {

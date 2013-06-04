@@ -1,28 +1,47 @@
-// Use this file to do all of your initial setup - this will be run after
-// core/core.js and all of your models.
+var httpGet = function(theUrl) {
+  var xmlHttp = null;
+  xmlHttp = new XMLHttpRequest();
+  xmlHttp.open( "GET", theUrl, false );
+  xmlHttp.send( null );
+  return xmlHttp.responseText;
+};
 
-/*
- *  to set up realtime for your specific models
- *  pass an array of model names into the method
- *  below:                                         */
+geddy.io.addListenersForModels(['Message']);
 
-// geddy.io.addListenersForModels();
+var renderTemplate = function(message) {
+  var template = [
+    '<li id="message-' + message.id + '">',
+      '<p>' + message.body + '</p>',
+      '<i>' + geddy.date.relativeTime(new Date(message.createdAt)) + '</i>',
+    '</li>'].join('');
+  return $(template);
+};
 
-/*
- *  example:
- *
- *  geddy.io.addListenersForModels(['Item']);
- *
- *  geddy.model.Item.on('save', function (item) {
- *    console.log(item);
- *  });
- *
- *  geddy.model.Item.on('update', function (item) {
- *    console.log(item);
- *  });
- *
- *  geddy.model.Item.on('remove', function (id) {
- *    console.log(id);
- *  });
- *
- */
+var MessagesController = function (opts) {
+  var self = this;
+  this.options = opts || {};
+
+  this.create = function (message) {
+    $('#messages-list').append(renderTemplate(message));
+  };
+
+  this.update = function (message) {
+    $('#message-' + message.id).replaceWith(renderTemplate(message));
+    renderUser(message);
+  };
+
+  this.remove = function (id) {
+    $('#message-' + id).remove();
+  };
+};
+
+var renderUser = function(message) {
+  var data = $.parseJSON(httpGet('http://' + location.host + '/' + message.userId + '.json'));
+  $('#message-' + message.id).append(' <b>' + data.user.name + '</b>');
+};
+
+geddy.Messages = new MessagesController();
+
+geddy.model.Message.on('save',   geddy.Messages.create);
+geddy.model.Message.on('update', geddy.Messages.update);
+geddy.model.Message.on('remove', geddy.Messages.remove);

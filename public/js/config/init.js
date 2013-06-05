@@ -12,7 +12,7 @@ var renderTemplate = function(message) {
   var template = [
     '<li id="message-' + message.id + '">',
       '<p class="body">' + message.body + '</p>',
-      '<img class="avatar" src="/img/shared/default-user-avatar.png">',
+      '<img class="avatar" src="/img/shared/default-user-avatar.png"> ',
       '<div class="info">',
         '<h2 class="name"></h2>',
         '<span class="time">' + geddy.date.relativeTime(new Date(message.createdAt)) + '</span>',

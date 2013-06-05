@@ -16,7 +16,7 @@ var RoomsShow = {
     RoomsShow.ui.submit.click(function() {
       setTimeout(function() {
         RoomsShow.clear();
-        RoomsShow.scroll();
+        RoomsShow.scroll(true);
       }, 100);
     });
 
@@ -35,14 +35,14 @@ var RoomsShow = {
   },
 
   scroll: function(animated) {
-    if (animated) {
+    if (animated == 'undefined') {
+      RoomsShow.ui.list.scrollTop(RoomsShow.ui.list[0].scrollHeight);
+    } else {
       setTimeout(function() {
         RoomsShow.ui.list.animate({
           scrollTop: RoomsShow.ui.list[0].scrollHeight
         }, 1000);
       }, 150);
-    } else {
-      RoomsShow.ui.list.scrollTop(RoomsShow.ui.list[0].scrollHeight);
     }
   }
 

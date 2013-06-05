@@ -9,7 +9,11 @@ var RoomsShow = {
 
   init: function() {
     RoomsShow.bind();
-    RoomsShow.scroll();
+    RoomsShow.showLoader();
+    RoomsShow.scroll(false);
+    setTimeout(function() {
+      RoomsShow.hideLoader();
+    }, 1500);
   },
 
   bind: function() {
@@ -28,6 +32,31 @@ var RoomsShow = {
         return false;
       }
     });
+  },
+
+  showLoader: function() {
+    RoomsShow.ui.list.append('<img src="/img/shared/loader.gif" class="loader">');
+
+    $('.loader').css({
+      position: 'absolute',
+      top: '50%',
+      left: '50%',
+      margin: '-30px 0 0 -30px'
+    });
+
+    RoomsShow.ui.list.animate({
+      opacity: 0.5
+    });
+  },
+
+  hideLoader: function() {
+    $('.loader').fadeOut(function() {
+      $(this).remove();
+    });
+
+    RoomsShow.ui.list.animate({
+      opacity: 1
+    });
   },  
 
   clear: function() {
@@ -35,14 +64,14 @@ var RoomsShow = {
   },
 
   scroll: function(animated) {
-    if (animated == 'undefined') {
-      RoomsShow.ui.list.scrollTop(RoomsShow.ui.list[0].scrollHeight);
-    } else {
+    if (animated == false) {
       setTimeout(function() {
-        RoomsShow.ui.list.animate({
-          scrollTop: RoomsShow.ui.list[0].scrollHeight
-        }, 1000);
-      }, 150);
+        RoomsShow.ui.list.scrollTop(RoomsShow.ui.list[0].scrollHeight);
+      }, 1500);
+    } else if (animated == true) {
+      RoomsShow.ui.list.animate({
+        scrollTop: RoomsShow.ui.list[0].scrollHeight
+      }, 1000);
     }
   }
 

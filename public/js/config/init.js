@@ -56,7 +56,7 @@ var renderUser = function(message) {
 };
 
 var renderAvatar = function(message) {
-  $('#message-' + message.id).find('.avatar').attr('src', '/img/shared/default-user-avatar.png'); // TODO: avatar não está aparecendo em nova mensagem
+  $('#message-' + message.id + ' .avatar').attr('src', '/img/shared/default-user-avatar.png');
 };
 
 var renderImage = function(message) {

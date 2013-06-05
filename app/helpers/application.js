@@ -26,5 +26,9 @@ module.exports = {
 
   isId: function(str) {
     return /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/.test(str);
+  },
+
+  isImage: function(str) {
+    return /^(jpg|jpeg|gif|png)$/.test(str.split('.').pop());
   }
 }

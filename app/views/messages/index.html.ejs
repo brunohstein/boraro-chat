@@ -5,7 +5,11 @@
         <% for (var i = 0, ii = messages.length; i < ii; i++) { %>
           <% if (geddy.currentUser.id == messages[i].userId) { %>
             <li id="message-<%= messages[i].id %>" class="self">
-              <p class="body"><%= messages[i].body %></p>
+              <% if (isImage(messages[i].body)) { %>
+                <p class="body"><img src="<%= messages[i].body %>"></p>
+              <% } else { %>
+                <p class="body"><%= messages[i].body %></p>
+              <% } %>
               <img class="avatar" src="/img/shared/default-user-avatar.png">
               <div class="info">
                 <h2 class="name"><%= messages[i].user.name %></h2>
@@ -14,7 +18,11 @@
             </li>
           <% } else { %>
             <li id="message-<%= messages[i].id %>" class="other">
-              <p class="body"><%= messages[i].body %></p>
+              <% if (isImage(messages[i].body)) { %>
+                <p class="body"><img src="<%= messages[i].body %>"></p>
+              <% } else { %>
+                <p class="body"><%= messages[i].body %></p>
+              <% } %>
               <div class="info">
                 <h2 class="name"><%= messages[i].user.name %></h2>
                 <span class="time"><%= geddy.date.relativeTime(new Date(messages[i].createdAt)) %></span>

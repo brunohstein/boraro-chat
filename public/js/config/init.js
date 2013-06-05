@@ -34,6 +34,7 @@ var MessagesController = function (opts) {
     $('#message-' + message.id).replaceWith(renderTemplate(message));
     renderUser(message);
     renderAvatar(message);
+    renderImage(message);
   };
 
   this.remove = function (id) {
@@ -49,6 +50,12 @@ var renderUser = function(message) {
 var renderAvatar = function(message) {
   $('#message-' + message.id).find('.avatar').attr('src', '/img/shared/default-user-avatar.png'); // TODO: avatar não está aparecendo em nova mensagem
 };
+
+var renderImage = function(message) {
+  if (/^(jpg|jpeg|gif|png)$/.test(message.body.split('.').pop())) {
+    $('#message-' + message.id).find('.body').html('<img src="' + message.body + '">');
+  }
+}
 
 geddy.Messages = new MessagesController();
 

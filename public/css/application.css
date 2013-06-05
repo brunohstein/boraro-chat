@@ -504,7 +504,8 @@ input[type="radio"]:checked + label {
       height: 32px;
       background: url("/img/sections/messages/body-border-bottom.png") no-repeat; }
     .messages.index li .body img {
-      width: 178px; }
+      width: 177px;
+      margin-bottom: -5px; }
   .messages.index li .avatar {
     width: 47px;
     height: 47px;

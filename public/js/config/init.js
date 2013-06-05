@@ -45,6 +45,14 @@ var MessagesController = function (opts) {
 var renderUser = function(message) {
   var data = $.parseJSON(httpGet('http://' + location.host + '/' + message.userId + '.json'));
   $('#message-' + message.id).find('.name').text(data.user.name);
+
+  var currentUser = $('.list').attr('data-currentUser');
+
+  if (data.user.id == currentUser) {
+    $('#message-' + message.id).addClass('self');
+  } else {
+    $('#message-' + message.id).addClass('other');
+  }
 };
 
 var renderAvatar = function(message) {

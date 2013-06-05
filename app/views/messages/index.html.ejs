@@ -1,7 +1,7 @@
 <div class="row messages index">
   <div class="span">
     <% if (messages) { %>
-      <ul class="list">
+      <ul class="list" data-currentUser="<%= geddy.currentUser.id %>">
         <% for (var i = 0, ii = messages.length; i < ii; i++) { %>
           <% if (geddy.currentUser.id == messages[i].userId) { %>
             <li id="message-<%= messages[i].id %>" class="self">

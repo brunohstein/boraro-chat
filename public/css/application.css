@@ -460,6 +460,8 @@ input[type="radio"]:checked + label {
   width: 484px; }
   .messages.index li.self {
     text-align: left; }
+    .messages.index li.self .body:after {
+      background: url("/img/sections/messages/body-border-bottom.png") no-repeat; }
     .messages.index li.self .avatar {
       margin-right: 6px; }
     .messages.index li.self + .other {
@@ -468,6 +470,8 @@ input[type="radio"]:checked + label {
     text-align: right; }
     .messages.index li.other .body {
       margin-left: 276px; }
+      .messages.index li.other .body:after {
+        background: url("/img/sections/messages/body-border-bottom-inverted.png") no-repeat; }
     .messages.index li.other .avatar {
       margin-left: 6px; }
     .messages.index li.other + .self {
@@ -501,8 +505,7 @@ input[type="radio"]:checked + label {
       left: -1px;
       bottom: -32px;
       width: 208px;
-      height: 32px;
-      background: url("/img/sections/messages/body-border-bottom.png") no-repeat; }
+      height: 32px; }
     .messages.index li .body img {
       width: 177px;
       margin-bottom: -5px; }

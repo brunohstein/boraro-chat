@@ -40,6 +40,12 @@
     &.self {
       text-align: left;
 
+      .body {
+        &:after {
+          background: url('/img/sections/messages/body-border-bottom.png') no-repeat;
+        }
+      }
+
       .avatar {
         margin-right: 6px;
       }
@@ -54,6 +60,10 @@
 
       .body {
         margin-left: 276px;
+
+        &:after {
+          background: url('/img/sections/messages/body-border-bottom-inverted.png') no-repeat;
+        }
       }
 
       .avatar {
@@ -98,7 +108,6 @@
         bottom: -32px;
         width: 208px;
         height: 32px;
-        background: url('/img/sections/messages/body-border-bottom.png') no-repeat;
       }
 
       img {

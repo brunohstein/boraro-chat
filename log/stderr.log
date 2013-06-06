@@ -1,0 +1,2 @@
+[Thu, 06 Jun 2013 17:12:16 GMT] ERROR 127.0.0.1 - - [Thu Jun 06 2013 14:12:16 GMT-0300 (BRT)] "POST /users 1.1" 500 1252 "http://0.0.0.0:4000/users/add" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.110 Safari/537.36"
+[Thu, 06 Jun 2013 17:18:57 GMT] ERROR 127.0.0.1 - - [Thu Jun 06 2013 14:18:57 GMT-0300 (BRT)] "POST /users 1.1" 500 1173 "http://0.0.0.0:4000/users/add" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.110 Safari/537.36"

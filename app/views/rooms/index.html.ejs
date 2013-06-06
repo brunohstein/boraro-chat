@@ -1,6 +1,6 @@
 <div class="hero-unit">
   <h2>All Rooms</h2>
-  <%- linkTo('Create a new Room', addRoomPath, {class: 'btn pull-right'}); %>
+  <%- linkTo('Create a new Room', addRoomPath(params.user), {class: 'btn pull-right'}); %>
 </div>
 
 <% if (rooms) { %>

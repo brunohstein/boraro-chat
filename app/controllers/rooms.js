@@ -32,6 +32,11 @@ var Rooms = function () {
     room.slug = helpers.slugify(room.title);
 
     geddy.model.Room.first({slug: room.slug}, function(err, data) {
+
+      if (room.avatar == '') {
+        room.avatar = '/img/shared/default-room-avatar.png';
+      }
+
       if (data) {
         params.errors = {
           slug: 'This room has already been created.'
@@ -176,7 +181,7 @@ var Rooms = function () {
           params.errors = err;
           self.transfer('edit');
         } else {
-          self.redirect({controller: self.name});
+          self.transfer('show');
         }
       });
     });

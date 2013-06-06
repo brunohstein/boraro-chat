@@ -4,12 +4,15 @@ var RoomsShow = {
     list:     $('.list'),
     submit:   $('.send'),
     textarea: $('.text'),
-    form:     $('.form')
+    form:     $('.form'),
+    sidebar:  $('.sidebar'),
+    avatar:   $('.sidebar .avatar')
   },
 
   init: function() {
     RoomsShow.bind();
     RoomsShow.showLoader();
+    RoomsShow.adjustAvatar();
     RoomsShow.scroll(false);
     setTimeout(function() {
       RoomsShow.hideLoader();
@@ -73,6 +76,21 @@ var RoomsShow = {
         scrollTop: RoomsShow.ui.list[0].scrollHeight
       }, 1000);
     }
+  },
+
+  adjustAvatar: function() {
+    $(window).load(function() {
+      var width = RoomsShow.ui.avatar.width(),
+          crop = RoomsShow.ui.sidebar.width();
+
+      console.log(width, crop);
+
+      if (width > crop) {
+        RoomsShow.ui.avatar.css({
+          marginLeft: - ((width - crop) / 2)
+        });
+      }
+    });
   }
 
 };

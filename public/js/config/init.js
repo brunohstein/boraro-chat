@@ -56,7 +56,8 @@ var renderUser = function(message) {
 };
 
 var renderAvatar = function(message) {
-  $('#message-' + message.id + ' .avatar').attr('src', '/img/shared/default-user-avatar.png');
+  var data = $.parseJSON(httpGet('http://' + location.host + '/' + message.userId + '.json'));
+  $('#message-' + message.id + ' .avatar').attr('src', message.user.avatar);
 };
 
 var renderImage = function(message) {

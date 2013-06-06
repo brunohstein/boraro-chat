@@ -1,3 +1,6 @@
+-- To create tables on Heroku
+-- psql -h ec2-23-21-129-125.compute-1.amazonaws.com -p 5432 -d d99a7sr6909d48 -U isqxerhcimjeod -f schema.sql
+
 --
 -- PostgreSQL database dump
 --
@@ -37,7 +40,7 @@ SET default_with_oids = false;
 
 --
 -- TOC entry 168 (class 1259 OID 410732)
--- Name: messages; Type: TABLE; Schema: public; Owner: bruno; Tablespace: 
+-- Name: messages; Type: TABLE; Schema: public; Owner: isqxerhcimjeod; Tablespace: 
 --
 
 CREATE TABLE messages (
@@ -50,11 +53,11 @@ CREATE TABLE messages (
 );
 
 
-ALTER TABLE public.messages OWNER TO bruno;
+ALTER TABLE public.messages OWNER TO isqxerhcimjeod;
 
 --
 -- TOC entry 169 (class 1259 OID 410740)
--- Name: passports; Type: TABLE; Schema: public; Owner: bruno; Tablespace: 
+-- Name: passports; Type: TABLE; Schema: public; Owner: isqxerhcimjeod; Tablespace: 
 --
 
 CREATE TABLE passports (
@@ -67,11 +70,11 @@ CREATE TABLE passports (
 );
 
 
-ALTER TABLE public.passports OWNER TO bruno;
+ALTER TABLE public.passports OWNER TO isqxerhcimjeod;
 
 --
 -- TOC entry 170 (class 1259 OID 410748)
--- Name: rooms; Type: TABLE; Schema: public; Owner: bruno; Tablespace: 
+-- Name: rooms; Type: TABLE; Schema: public; Owner: isqxerhcimjeod; Tablespace: 
 --
 
 CREATE TABLE rooms (
@@ -85,11 +88,11 @@ CREATE TABLE rooms (
 );
 
 
-ALTER TABLE public.rooms OWNER TO bruno;
+ALTER TABLE public.rooms OWNER TO isqxerhcimjeod;
 
 --
 -- TOC entry 171 (class 1259 OID 410756)
--- Name: users; Type: TABLE; Schema: public; Owner: bruno; Tablespace: 
+-- Name: users; Type: TABLE; Schema: public; Owner: isqxerhcimjeod; Tablespace: 
 --
 
 CREATE TABLE users (
@@ -105,11 +108,11 @@ CREATE TABLE users (
 );
 
 
-ALTER TABLE public.users OWNER TO bruno;
+ALTER TABLE public.users OWNER TO isqxerhcimjeod;
 
 --
 -- TOC entry 2197 (class 2606 OID 410739)
--- Name: messages_pkey; Type: CONSTRAINT; Schema: public; Owner: bruno; Tablespace: 
+-- Name: messages_pkey; Type: CONSTRAINT; Schema: public; Owner: isqxerhcimjeod; Tablespace: 
 --
 
 ALTER TABLE ONLY messages
@@ -118,7 +121,7 @@ ALTER TABLE ONLY messages
 
 --
 -- TOC entry 2199 (class 2606 OID 410747)
--- Name: passports_pkey; Type: CONSTRAINT; Schema: public; Owner: bruno; Tablespace: 
+-- Name: passports_pkey; Type: CONSTRAINT; Schema: public; Owner: isqxerhcimjeod; Tablespace: 
 --
 
 ALTER TABLE ONLY passports
@@ -127,7 +130,7 @@ ALTER TABLE ONLY passports
 
 --
 -- TOC entry 2201 (class 2606 OID 410755)
--- Name: rooms_pkey; Type: CONSTRAINT; Schema: public; Owner: bruno; Tablespace: 
+-- Name: rooms_pkey; Type: CONSTRAINT; Schema: public; Owner: isqxerhcimjeod; Tablespace: 
 --
 
 ALTER TABLE ONLY rooms
@@ -136,7 +139,7 @@ ALTER TABLE ONLY rooms
 
 --
 -- TOC entry 2203 (class 2606 OID 410763)
--- Name: users_pkey; Type: CONSTRAINT; Schema: public; Owner: bruno; Tablespace: 
+-- Name: users_pkey; Type: CONSTRAINT; Schema: public; Owner: isqxerhcimjeod; Tablespace: 
 --
 
 ALTER TABLE ONLY users
@@ -146,12 +149,12 @@ ALTER TABLE ONLY users
 --
 -- TOC entry 2210 (class 0 OID 0)
 -- Dependencies: 5
--- Name: public; Type: ACL; Schema: -; Owner: bruno
+-- Name: public; Type: ACL; Schema: -; Owner: isqxerhcimjeod
 --
 
 REVOKE ALL ON SCHEMA public FROM PUBLIC;
-REVOKE ALL ON SCHEMA public FROM bruno;
-GRANT ALL ON SCHEMA public TO bruno;
+REVOKE ALL ON SCHEMA public FROM isqxerhcimjeod;
+GRANT ALL ON SCHEMA public TO isqxerhcimjeod;
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
 

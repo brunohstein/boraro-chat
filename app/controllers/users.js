@@ -1,7 +1,11 @@
-var passport = require('../helpers/passport'),
-    cryptPass = passport.cryptPass,
+var passport =    require('../helpers/passport'),
+    cryptPass =   passport.cryptPass,
     requireAuth = passport.requireAuth,
-    helpers = require('../helpers/application');
+    formidable =  require('formidable'),
+    fs =          require('fs'),
+    http =        require('http'),
+    path =        require('path'),
+    helpers =     require('../helpers/application');
 
 var Users = function () {
   this.before(requireAuth, {
@@ -25,27 +29,59 @@ var Users = function () {
 
   this.create = function (req, resp, params) {
     var self = this,
-        user = geddy.model.User.create(params);
+        form = new formidable.IncomingForm(),
+        user,
+        uploadedFile,
+        savedFile;
 
-    geddy.model.User.first({username: user.username}, function(err, data) {
-      if (data) {
-        params.errors = {
-          username: 'This username is already in use.'
-        };
-        self.transfer('add');
-      } else {
-        if (user.isValid()) {
-          user.password = cryptPass(user.password);
-        }
-        user.save(function(err, data) {
-          if (err) {
-            params.errors = err;
-            self.transfer('add');
-          } else {
-            self.redirect({controller: 'main', action: 'login'});
-          }
-        });
+    form.onPart = function (part) {
+      if (!part.filename) {
+        form.handlePart(part);
       }
+
+      uploadedFile = encodeURIComponent(part.filename);
+      savedFile = fs.createWriteStream(path.join('public', 'uploads', 'users', uploadedFile));
+
+      part.addListener('data', function(data) {
+        savedFile.write(data);
+      });
+
+      part.addListener('end', function () {
+        var err;
+
+        if (uploadedFile) {
+          savedFile.end();
+        } else {
+          err = new Error('Something went wrong in the upload.');
+          self.error(err);
+        }
+      });
+    };
+
+    form.parse(req, function(err, fields) {
+      user = geddy.model.User.create(fields);
+      user.avatar = '/uploads/users/' + uploadedFile;
+
+      geddy.model.User.first({username: user.username}, function(err, data) {
+        if (data) {
+          params.errors = {
+            username: 'This username is already in use.'
+          };
+          self.transfer('add');
+        } else {
+          if (user.isValid()) {
+            user.password = cryptPass(user.password);
+          }
+          user.save(function(err, data) {
+            if (err) {
+              params.errors = err;
+              self.transfer('add');
+            } else {
+              self.redirect({controller: 'main', action: 'login'});
+            }
+          });
+        };
+      });
     });
   };
 

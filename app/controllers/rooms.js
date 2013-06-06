@@ -1,7 +1,11 @@
-var passport = require('../helpers/passport'),
-    cryptPass = passport.cryptPass,
+var passport =    require('../helpers/passport'),
+    cryptPass =   passport.cryptPass,
     requireAuth = passport.requireAuth,
-    helpers = require('../helpers/application');
+    formidable  = require('formidable'),
+    fs =          require('fs'),
+    http =        require('http'),
+    path =        require('path'),
+    helpers =     require('../helpers/application');
 
 var Rooms = function () {
   this.before(requireAuth);
@@ -22,33 +26,72 @@ var Rooms = function () {
   };
 
   this.create = function (req, resp, params) {
+    console.log('= create =');
+
     var self = this,
-        room = geddy.model.Room.create(params);
+        form = new formidable.IncomingForm(),
+        room,
+        uploadedFile,
+        savedFile;
 
-    room.slug = helpers.slugify(room.title);
+    form.onPart = function (part) {
+      console.log('= onPart =');
 
-    geddy.model.Room.first({slug: room.slug}, function(err, data) {
-      if (data) {
-        params.errors = {
-          slug: 'This room has already been created.'
-        };
-        self.transfer('add');
-      } else {
-        room.save(function(err, data) {
-          if (err) {
-            params.errors = err;
-            self.transfer('add');
-          } else {
-            geddy.model.User.first({id: self.session.get('userId')}, function (err, user) {
-              user.addRoom(room);
-              
-              user.save(function(err, data) {
-                self.redirect('/' + user.username);
-              });
-            });
-          }
-        });
+      if (!part.filename) {
+        form.handlePart(part);
       }
+
+      uploadedFile = encodeURIComponent(part.filename);
+      savedFile = fs.createWriteStream(path.join('public', 'uploads', 'rooms', uploadedFile));
+
+      part.addListener('data', function(data) {
+        console.log('= data =');
+        savedFile.write(data);
+      });
+
+      part.addListener('end', function () {
+        console.log('= end =');
+        var err;
+
+        if (uploadedFile) {
+          savedFile.end();
+        } else {
+          err = new Error('Something went wrong in the upload.');
+          self.error(err);
+        }
+      });
+    };
+
+    form.parse(req, function(err, fields) {
+      console.log('= parse =');
+      console.log(fields);
+      room = geddy.model.Room.create(fields);
+      room.avatar = '/uploads/rooms/' + uploadedFile;
+      room.slug = helpers.slugify(room.title);
+
+      geddy.model.Room.first({slug: room.slug}, function(err, data) {
+        if (data) {
+          params.errors = {
+            slug: 'This room has already been created.'
+          };
+          self.transfer('add');
+        } else {
+          room.save(function(err, data) {
+            if (err) {
+              params.errors = err;
+              self.transfer('add');
+            } else {
+              geddy.model.User.first({id: self.session.get('userId')}, function (err, user) {
+                user.addRoom(room);
+                
+                user.save(function(err, data) {
+                  self.redirect('/' + user.username);
+                });
+              });
+            }
+          });
+        }
+      });
     });
   };
 

@@ -5,6 +5,7 @@ var passport =    require('../helpers/passport'),
     fs =          require('fs'),
     http =        require('http'),
     path =        require('path'),
+    crypto =      require('crypto'),
     helpers =     require('../helpers/application');
 
 var Users = function () {
@@ -34,33 +35,35 @@ var Users = function () {
         uploadedFile,
         savedFile;
 
-    form.onPart = function (part) {
-      if (!part.filename) {
-        form.handlePart(part);
-      }
+    // form.onPart = function (part) {
+    //   if (!part.filename) {
+    //     form.handlePart(part);
+    //   }
 
-      uploadedFile = encodeURIComponent(part.filename);
-      savedFile = fs.createWriteStream(path.join('public', 'uploads', 'users', uploadedFile));
+    //   uploadedFile = encodeURIComponent(part.filename);
+    //   savedFile = fs.createWriteStream(path.join('public', 'uploads', 'users', uploadedFile));
 
-      part.addListener('data', function(data) {
-        savedFile.write(data);
-      });
+    //   part.addListener('data', function(data) {
+    //     savedFile.write(data);
+    //   });
 
-      part.addListener('end', function () {
-        var err;
+    //   part.addListener('end', function () {
+    //     var err;
 
-        if (uploadedFile) {
-          savedFile.end();
-        } else {
-          err = new Error('Something went wrong in the upload.');
-          self.error(err);
-        }
-      });
-    };
+    //     if (uploadedFile) {
+    //       savedFile.end();
+    //     } else {
+    //       err = new Error('Something went wrong in the upload.');
+    //       self.error(err);
+    //     }
+    //   });
+    // };
 
     form.parse(req, function(err, fields) {
       user = geddy.model.User.create(fields);
-      user.avatar = '/uploads/users/' + uploadedFile;
+      var avatar = user.email;
+      user.avatar = 'http://www.gravatar.com/avatar/' + crypto.createHash('md5').update(avatar).digest("hex");
+      // user.avatar = '/uploads/users/' + uploadedFile;
 
       geddy.model.User.first({username: user.username}, function(err, data) {
         if (data) {
@@ -144,6 +147,9 @@ var Users = function () {
       if (params.password && user.isValid()) {
         user.password = cryptPass(user.password);
       }
+
+      var avatar = user.email;
+      user.avatar = 'http://www.gravatar.com/avatar/' + crypto.createHash('md5').update(avatar).digest("hex");;
 
       user.save(function(err, data) {
         if (err) {

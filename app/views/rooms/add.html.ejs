@@ -1,5 +1,5 @@
 <div class="hero-unit">
-  <form id="room-form" class="form-horizontal" action="/<%= params.user %>/rooms" method="POST" enctype="multipart/form-data">
+  <form id="room-form" class="form-horizontal" action="/<%= params.user %>/rooms" method="POST"> <!-- enctype="multipart/form-data" -->
     <fieldset>
       <legend>Create a new Room</legend>
       <% if(params.errors) { %>

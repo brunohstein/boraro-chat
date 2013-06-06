@@ -1,55 +1,24 @@
 var config = {
-  detailedErrors: false,
+  detailedErrors: true,
+  debug: true,
   hostname: null,
-  port: 4000,
   model: {
-    defaultAdapter: 'mongo'
+    defaultAdapter: 'postgres'
   },
   db: {
-    mongo: {
-      username: null,
-      dbname: 'production',
-      prefix: null,
-      password: null,
-      host: 'localhost',
-      port: 27017
-    }
-  }
-
-/* // Using Postgres as the default, with only a Postgres DB
-, model: {
-    defaultAdapter: 'postgres'
-  }
-, db: {
     postgres: {
-      user: process.env.USER
-    , database: process.env.USER
-    , password: null
-    , host: null
-    , port: 5432
+      user: 'isqxerhcimjeod',
+      database: 'd99a7sr6909d48',
+      password: '92rYpLRB15SuZUDkzbh292eDy6',
+      host: 'ec2-23-21-129-125.compute-1.amazonaws.com',
+      port: 5432
     }
+  },
+  sessions: {
+    store: 'cookie',
+    key: 'sid',
+    expiry: 14 * 24 * 60 * 60
   }
-*/
-
-/* // Using Postgres as the default, with both Postgres and Riak
-, model: {
-    defaultAdapter: 'postgres'
-  }
-, db: {
-    postgres: {
-      user: process.env.USER
-    , database: process.env.USER
-    , password: null
-    , host: null
-    , port: 5432
-    }
-  , riak: {
-      protocol: 'http'
-    , host: 'localhost'
-    , port: 8098
-  }
-  }
-*/
 };
 
 module.exports = config;

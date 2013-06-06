@@ -1,7 +1,7 @@
 {
   "name": "boraro-chat",
   "version": "0.0.1",
-  "author": "",
+  "author": "Bruno Stein",
   "dependencies": {
     "geddy": "0.8.x",
     "jake": "0.5.x",
@@ -14,7 +14,6 @@
     "cookie": "0.1.x",
     "formidable": "1.0.x"
   },
-  "devDependencies": {},
   "engines": {
     "node": "0.8.x",
     "npm": "1.2.x"

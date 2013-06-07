@@ -8,7 +8,7 @@
 <ul>
   <% for(var i in rooms) { %>
     <li>
-      <a href="/<%= params.user %>/<%= rooms[i].slug %>"><%= rooms[i].title %></a>
+      <a href="/room/<%= rooms[i].slug %>"><%= rooms[i].title %></a>
     </li>
   <% } %>
 </ul>

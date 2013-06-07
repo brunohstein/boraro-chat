@@ -1,12 +1,8 @@
 <form id="login-form" action="<%= localPath %>" method="POST" class="align-center">
-  <div class="row">
-    <%- contentTag('input', params.username, {type: 'text', name: 'username', placeholder: 'Username', class: 'span span8'}) %>
-  </div>
-  <div class="row">
-    <%- contentTag('input', params.password, {type: 'password', name: 'password', placeholder: 'Password', class: 'span span8'}) %>
-  </div>
-  <div class="row">
-    <%- linkTo('New user', '/users/add', {class: 'btn'}) %>
-    <%- contentTag('input', 'Login', {type: 'submit', class: 'btn primary'}) %>
-  </div>
+  <%- contentTag('input', params.username, {type: 'text', name: 'username', placeholder: 'Username', class: 'span6'}) %>
+
+  <%- contentTag('input', params.password, {type: 'password', name: 'password', placeholder: 'Password', class: 'span6'}) %>
+
+  <%- linkTo('New user', '/users/add', {class: 'btn span3'}) %>
+  <%- contentTag('input', 'Login', {type: 'submit', class: 'btn primary span3'}) %>
 </form>

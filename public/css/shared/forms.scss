@@ -6,9 +6,16 @@ input[type="text"], input[type="email"], input[type="password"], textarea {
   color: $grayl;
   font-size: 14px;
   font-family: $proxima;
-  display: inline-block;
+  display: block;
   box-sizing: border-box;
-  margin: 0;
+  margin: 0 auto;
+
+  & + input[type="text"],
+  & + input[type="email"],
+  & + input[type="password"],
+  & + textarea {
+    margin-top: 10px;
+  }
 
   &::-webkit-input-placeholder { color: $grayl; transition: .2s; }
   &:-moz-placeholder           { color: $grayl; transition: .2s; }

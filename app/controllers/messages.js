@@ -23,9 +23,7 @@ var Messages = function () {
             geddy.model.Room.first({slug: params.room}, function (err, room) {
               room.addMessage(message);
 
-              room.save(function(err, data) {
-                self.redirect({controller: 'rooms', action: 'show'});
-              });
+              room.save();
             });
           });
         });

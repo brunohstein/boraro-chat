@@ -7,8 +7,8 @@ var httpGet = function(theUrl) {
 };
 
 geddy.io.configure(function () { 
-  io.set("transports", ["xhr-polling"]); 
-  io.set("polling duration", 10); 
+  geddy.io.set("transports", ["xhr-polling"]); 
+  geddy.io.set("polling duration", 10); 
 });
 
 geddy.io.addListenersForModels(['Message']);

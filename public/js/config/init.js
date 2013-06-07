@@ -6,11 +6,6 @@ var httpGet = function(theUrl) {
   return xmlHttp.responseText;
 };
 
-geddy.socket.configure(function () { 
-  geddy.socket.set("transports", ["xhr-polling"]); 
-  geddy.socket.set("polling duration", 10); 
-});
-
 geddy.io.addListenersForModels(['Message']);
 
 var renderTemplate = function(message) {

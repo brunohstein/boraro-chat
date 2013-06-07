@@ -1,7 +1,6 @@
 <div class="hero-unit">
-  <form id="user-form" class="form-horizontal" action="<%= usersPath %>" method="POST" enctype="multipart/form-data">
+  <form id="user-form" class="align-center" action="<%= usersPath %>" method="POST" enctype="multipart/form-data">
     <fieldset>
-      <legend>Create a new User</legend>
       <% if(params.errors) { %>
       <div class="control-group">
         <ul>
@@ -12,8 +11,8 @@
       </div>
       <% } %>
       <%= partial('_form', {user: params}) %>
-      <div class="form-actions">
-        <%- contentTag('input', 'Add', {type: 'submit', class: 'btn btn-primary'}) %>
+      <div class="row">
+        <%- contentTag('input', 'Create new user', {type: 'submit', class: 'btn primary'}) %>
       </div>
     </fieldset>
   </form>

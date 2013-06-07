@@ -194,7 +194,7 @@ input[type="text"], input[type="email"], input[type="password"], textarea {
   color: #aaaaaa;
   font-size: 14px;
   font-family: "Proxima Nova", sans-serif;
-  display: block;
+  display: inline-block;
   box-sizing: border-box;
   margin: 0; }
   input[type="text"]::-webkit-input-placeholder, input[type="email"]::-webkit-input-placeholder, input[type="password"]::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
@@ -281,7 +281,8 @@ input[type="radio"]:checked + label {
   padding: 22px;
   cursor: pointer;
   font-size: 16px;
-  font-family: "Proxima Nova", sans-serif; }
+  font-family: "Proxima Nova", sans-serif;
+  text-align: center; }
   .btn.btn {
     color: #aaaaaa;
     text-shadow: 0 1px 0 white;
@@ -393,7 +394,6 @@ input[type="radio"]:checked + label {
       top: 0;
       left: 0;
       min-width: 100%;
-      max-width: 200%;
       width: auto;
       min-height: 300px;
       height: auto; }

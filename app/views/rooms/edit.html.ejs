@@ -1,7 +1,6 @@
 <div class="hero-unit">
-  <form id="room-form" class="form-horizontal" action="/<%= params.user %>/<%= params.room %>?_method=PUT" method="POST">
+  <form id="room-form" class="align-center" action="/<%= params.user %>/<%= params.room %>?_method=PUT" method="POST">
     <fieldset>
-      <legend>Update this Room</legend>
       <% if(params.errors) { %>
       <div class="control-group">
         <ul>
@@ -13,8 +12,8 @@
       <% } %>
       <%= partial('_form', {room: room}); %>
       <div class="form-actions">
-        <%- contentTag('input', 'Save', {type: 'submit', class: 'btn btn-primary'}) %>
-        <%- contentTag('button', 'Remove', {type: 'submit', formaction: params.user + '/' + params.room + '?_method=DELETE', formmethod: 'POST', class: 'btn btn-danger'}) %>
+        <%- contentTag('button', 'Remove', {type: 'submit', formaction: params.user + '/' + params.room + '?_method=DELETE', formmethod: 'POST', class: 'btn danger span3'}) %>
+        <%- contentTag('input', 'Save', {type: 'submit', class: 'btn primary span3'}) %>
       </div>
     </fieldset>
   </form>

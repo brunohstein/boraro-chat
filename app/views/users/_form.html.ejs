@@ -1,18 +1,11 @@
-<div class="row">
-  <%- contentTag('input', user.username, {type:'text', class:'span6', name:'username', placeholder: 'username', class: 'span span8'}) %>
-</div>
-<div class="row">
-  <%- contentTag('input', user.password, {type:'password', class:'span6', name:'password', placeholder: 'password', class: 'span span8'}) %>
-</div>
-<div class="row">
-  <%- contentTag('input', user.confirmPassword, {type:'password', class:'span6', name:'confirmPassword', placeholder: 'repeat password', class: 'span span8'}) %>
-</div>
-<div class="row">
-  <%- contentTag('input', user.name, {type:'text', class:'span6', name:'name', placeholder: 'name', class: 'span span8'}) %>
-</div>
-<div class="row">
-  <%- contentTag('input', user.email, {type:'email', class:'span6', name:'email', placeholder: 'email', class: 'span span8'}) %>
-</div>
-<!-- <div class="row">
-  <%- contentTag('input', user.avatar, {type:'file', class:'span6', name:'avatar', class: 'span span8'}) %>
-</div> -->
+<%- contentTag('input', user.username, {type:'text', name:'username', placeholder: 'username', class: 'span6'}) %>
+
+<%- contentTag('input', user.password, {type:'password', name:'password', placeholder: 'password', class: 'span6'}) %>
+
+<%- contentTag('input', user.confirmPassword, {type:'password', name:'confirmPassword', placeholder: 'repeat password', class: 'span6'}) %>
+
+<%- contentTag('input', user.name, {type:'text', name:'name', placeholder: 'name', class: 'span6'}) %>
+
+<%- contentTag('input', user.email, {type:'email', name:'email', placeholder: 'email', class: 'span6'}) %>
+
+<!-- <%- contentTag('input', user.avatar, {type:'file', name:'avatar', class: 'span6'}) %> -->

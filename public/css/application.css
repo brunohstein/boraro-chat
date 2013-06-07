@@ -194,9 +194,11 @@ input[type="text"], input[type="email"], input[type="password"], textarea {
   color: #aaaaaa;
   font-size: 14px;
   font-family: "Proxima Nova", sans-serif;
-  display: inline-block;
+  display: block;
   box-sizing: border-box;
-  margin: 0; }
+  margin: 0 auto; }
+  input[type="text"] + input[type="text"], input[type="text"] + input[type="email"], input[type="text"] + input[type="password"], input[type="text"] + textarea, input[type="email"] + input[type="text"], input[type="email"] + input[type="email"], input[type="email"] + input[type="password"], input[type="email"] + textarea, input[type="password"] + input[type="text"], input[type="password"] + input[type="email"], input[type="password"] + input[type="password"], input[type="password"] + textarea, textarea + input[type="text"], textarea + input[type="email"], textarea + input[type="password"], textarea + textarea {
+    margin-top: 10px; }
   input[type="text"]::-webkit-input-placeholder, input[type="email"]::-webkit-input-placeholder, input[type="password"]::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
     color: #aaaaaa;
     transition: .2s; }
@@ -282,15 +284,17 @@ input[type="radio"]:checked + label {
   cursor: pointer;
   font-size: 16px;
   font-family: "Proxima Nova", sans-serif;
-  text-align: center; }
+  text-align: center;
+  margin: 10px 0 0;
+  display: inline-block;
+  box-sizing: border-box; }
   .btn.btn {
     color: #aaaaaa;
     text-shadow: 0 1px 0 white;
     background: #f9f9f9;
     box-shadow: 0 1px 2px white inset;
     border: 1px solid #eeeeee;
-    transition: .2s;
-    margin: 0; }
+    transition: .2s; }
     .btn.btn:hover {
       color: #aaaaaa;
       background: #fcfcfc;
@@ -422,9 +426,8 @@ input[type="radio"]:checked + label {
     z-index: 1;
     padding: 10px; }
     .rooms.show .sidebar .actions .btn {
-      width: 160px;
-      display: block;
-      margin-top: 5px; }
+      width: 206px;
+      display: block; }
 
 .messages.add {
   position: relative; }
@@ -433,7 +436,7 @@ input[type="radio"]:checked + label {
     padding-right: 100px; }
   .messages.add .btn.primary {
     position: absolute;
-    top: 10px;
+    top: 0;
     right: 10px; }
 
 .messages.index ul {

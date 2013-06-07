@@ -1,4 +1,5 @@
 var config = {
+  socketIo: true,
   realtime: true
 };
 

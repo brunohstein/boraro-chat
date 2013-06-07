@@ -1,6 +1,6 @@
 <div class="row messages add">
   <div class="span">
-    <form class="form" action="/<%= params.user %>/<%= params.room %>" method="POST">
+    <form class="form" action="/room/<%= params.room %>" method="POST">
       <% if(params.errors) { %>
         <ul>
           <% for(var err in params.errors) { %>

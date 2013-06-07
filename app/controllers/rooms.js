@@ -134,7 +134,7 @@ var Rooms = function () {
         err.statusCode = 400;
         self.error(err);
       } else {
-        geddy.model.Message.all({roomId: room.id}, {sort: {createdAt: 'asc'}}, function(err, data) {
+        geddy.model.Message.all({roomId: room.id}, {sort: 'createdAt'}, function(err, data) {
           var messages = [];
 
           if (data.length > 0) {

@@ -18,12 +18,12 @@ router.del('/:user').to('rooms.destroy');
 
 router.get('/:user/rooms').to('rooms.index');
 router.get('/:user/rooms/add').to('rooms.add');
-router.get('/:user/:room').to('rooms.show');
-router.get('/:user/:room/edit').to('rooms.edit');
+router.get('/room/:room(.:format)').to('rooms.show');
+router.get('/room/:room/edit').to('rooms.edit');
 router.post('/:user/rooms').to('rooms.create');
-router.put('/:user/:room').to('rooms.update');
-router.del('/:user/:room').to('rooms.destroy');
+router.put('/room/:room').to('rooms.update');
+router.del('/room/:room').to('rooms.destroy');
 
-router.post('/:user/:room').to('messages.create');
+router.post('/room/:room').to('messages.create');
 
 exports.router = router;

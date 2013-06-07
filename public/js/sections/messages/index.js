@@ -29,7 +29,7 @@ var MessagesIndex = {
     }, 1000);
     setInterval(function() {
       MessagesIndex.refresh();
-    }, 500);
+    }, 3000);
   },
 
   showLoader: function() {
@@ -102,22 +102,22 @@ var MessagesIndex = {
         updates = data.messages.length - MessagesIndex.counter;
 
     if (updates > 0) {
-      MessagesIndex.render(data.messages);
-    };
+      for (i = MessagesIndex.counter; i < data.messages.length; i++) {
+        MessagesIndex.render(data.messages[i]);
+      }
 
-    MessagesIndex.counter = data.messages.length;
+      MessagesIndex.counter = data.messages.length;
+    };
   },
 
-  render: function(messages) {
-    for (i = MessagesIndex.counter; i < messages.length; i++) {
-      MessagesIndex.ui.list.append(MessagesIndex.template(messages[i]));
+  render: function(message) {
+    MessagesIndex.ui.list.append(MessagesIndex.template(message));
 
-      if (/^(jpg|jpeg|gif|png)$/.test(messages[i].body.split('.').pop())) {
-        $('#message-' + messages[i].id).find('.body').html('<img src="' + messages[i].body + '">');
-      };
+    if (/^(jpg|jpeg|gif|png)$/.test(message.body.split('.').pop())) {
+      $('#message-' + message.id).find('.body').html('<img src="' + message.body + '">');
+    };
 
-      MessagesIndex.scroll(true);
-    }
+    MessagesIndex.scroll(true);
   }
 
 };

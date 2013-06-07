@@ -12,17 +12,19 @@ var MessagesAdd = {
 
   bind: function() {
     MessagesAdd.ui.submit.click(function() {
+      MessagesAdd.clear();
       setTimeout(function() {
-        MessagesAdd.clear();
-        MessagesIndex.scroll(true);
-      }, 100);
+        MessagesIndex.refresh();
+      }, 500);
     });
 
     MessagesAdd.ui.textarea.keypress(function(e) {
       if (e.which == 13) {
         MessagesAdd.ui.form.submit();
         MessagesAdd.clear();
-        MessagesIndex.scroll(true);
+        setTimeout(function() {
+          MessagesIndex.refresh();
+        }, 500);
         return false;
       }
     });

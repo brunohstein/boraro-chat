@@ -16,7 +16,7 @@ var RoomsShow = {
     RoomsShow.scroll(false);
     setTimeout(function() {
       RoomsShow.hideLoader();
-    }, 1500);
+    }, 1000);
   },
 
   bind: function() {
@@ -70,7 +70,7 @@ var RoomsShow = {
     if (animated == false) {
       setTimeout(function() {
         RoomsShow.ui.list.scrollTop(RoomsShow.ui.list[0].scrollHeight);
-      }, 1500);
+      }, 1000);
     } else if (animated == true) {
       RoomsShow.ui.list.animate({
         scrollTop: RoomsShow.ui.list[0].scrollHeight
@@ -82,8 +82,6 @@ var RoomsShow = {
     $(window).load(function() {
       var width = RoomsShow.ui.avatar.width(),
           crop = RoomsShow.ui.sidebar.width();
-
-      console.log(width, crop);
 
       if (width > crop) {
         RoomsShow.ui.avatar.css({

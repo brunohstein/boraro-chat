@@ -57,7 +57,7 @@ var renderUser = function(message) {
 
 var renderAvatar = function(message) {
   var data = $.parseJSON(httpGet('http://' + location.host + '/' + message.userId + '.json'));
-  $('#message-' + message.id + ' .avatar').attr('src', message.user.avatar);
+  $('#message-' + message.id + ' .avatar').attr('src', data.user.avatar);
 };
 
 var renderImage = function(message) {

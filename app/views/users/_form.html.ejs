@@ -1,36 +1,18 @@
-      <div class="control-group">
-        <label for="username" class="control-label">username</label>
-        <div class="controls">
-          <%- contentTag('input', user.username, {type:'text', class:'span6', name:'username'}) %>
-        </div>
-      </div>
-      <div class="control-group">
-        <label for="password" class="control-label">password</label>
-        <div class="controls">
-          <%- contentTag('input', user.password, {type:'password', class:'span6', name:'password'}) %>
-        </div>
-      </div>
-      <div class="control-group">
-        <label for="confirmPassword" class="control-label">repeat password</label>
-        <div class="controls">
-          <%- contentTag('input', user.confirmPassword, {type:'password', class:'span6', name:'confirmPassword'}) %>
-        </div>
-      </div>
-      <div class="control-group">
-        <label for="name" class="control-label">name</label>
-        <div class="controls">
-          <%- contentTag('input', user.name, {type:'text', class:'span6', name:'name'}) %>
-        </div>
-      </div>
-      <div class="control-group">
-        <label for="email" class="control-label">email</label>
-        <div class="controls">
-          <%- contentTag('input', user.email, {type:'email', class:'span6', name:'email'}) %>
-        </div>
-      </div>
-      <!-- <div class="control-group">
-        <label for="avatar" class="control-label">avatar</label>
-        <div class="controls">
-          <%- contentTag('input', user.avatar, {type:'file', class:'span6', name:'avatar'}) %>
-        </div>
-      </div> -->
+<div class="row">
+  <%- contentTag('input', user.username, {type:'text', class:'span6', name:'username', placeholder: 'username', class: 'span span8'}) %>
+</div>
+<div class="row">
+  <%- contentTag('input', user.password, {type:'password', class:'span6', name:'password', placeholder: 'password', class: 'span span8'}) %>
+</div>
+<div class="row">
+  <%- contentTag('input', user.confirmPassword, {type:'password', class:'span6', name:'confirmPassword', placeholder: 'repeat password', class: 'span span8'}) %>
+</div>
+<div class="row">
+  <%- contentTag('input', user.name, {type:'text', class:'span6', name:'name', placeholder: 'name', class: 'span span8'}) %>
+</div>
+<div class="row">
+  <%- contentTag('input', user.email, {type:'email', class:'span6', name:'email', placeholder: 'email', class: 'span span8'}) %>
+</div>
+<!-- <div class="row">
+  <%- contentTag('input', user.avatar, {type:'file', class:'span6', name:'avatar', class: 'span span8'}) %>
+</div> -->

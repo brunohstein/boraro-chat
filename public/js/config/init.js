@@ -6,6 +6,11 @@ var httpGet = function(theUrl) {
   return xmlHttp.responseText;
 };
 
+geddy.io.configure(function () { 
+  io.set("transports", ["xhr-polling"]); 
+  io.set("polling duration", 10); 
+});
+
 geddy.io.addListenersForModels(['Message']);
 
 var renderTemplate = function(message) {

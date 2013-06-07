@@ -469,7 +469,7 @@ input[type="radio"]:checked + label {
     .messages.index li.self .avatar {
       margin-right: 6px; }
     .messages.index li.self + .other {
-      margin-top: -90px; }
+      margin-top: -65px; }
   .messages.index li.other {
     text-align: right; }
     .messages.index li.other .body {
@@ -479,7 +479,7 @@ input[type="radio"]:checked + label {
     .messages.index li.other .avatar {
       margin-left: 6px; }
     .messages.index li.other + .self {
-      margin-top: -90px; }
+      margin-top: -65px; }
   .messages.index li .body {
     height: auto;
     width: 208px;

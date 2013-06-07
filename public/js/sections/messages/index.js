@@ -19,17 +19,18 @@ var MessagesIndex = {
   },
 
   init: function() {
-    var data = $.parseJSON(httpGet(MessagesIndex.url() + '.json'));
+    var data = JSON.parse(httpGet(MessagesIndex.url() + '.json'));
     MessagesIndex.counter = data.messages.length;
 
     MessagesIndex.showLoader();
+
     MessagesIndex.scroll(false);
+
     setTimeout(function() {
       MessagesIndex.hideLoader();
     }, 1000);
-    setInterval(function() {
-      MessagesIndex.refresh();
-    }, 3000);
+
+    MessagesIndex.refresh();
   },
 
   showLoader: function() {
@@ -98,16 +99,15 @@ var MessagesIndex = {
   },
 
   refresh: function() {
-    var data = $.parseJSON(httpGet(MessagesIndex.url() + '.json')),
-        updates = data.messages.length - MessagesIndex.counter;
+    var worker  = new Worker('/js/sections/messages/refresh.js'),
+        url     = MessagesIndex.url(),
+        counter = MessagesIndex.counter;
 
-    if (updates > 0) {
-      for (i = MessagesIndex.counter; i < data.messages.length; i++) {
-        MessagesIndex.render(data.messages[i]);
-      }
+    worker.postMessage({url: url, counter: counter});
 
-      MessagesIndex.counter = data.messages.length;
-    };
+    worker.addEventListener('message', function(event) {
+      MessagesIndex.render(event.data.message);
+    });
   },
 
   render: function(message) {

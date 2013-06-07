@@ -12,9 +12,8 @@ var MessagesAdd = {
 
   bind: function() {
     MessagesAdd.ui.submit.click(function() {
-      MessagesAdd.clear();
       setTimeout(function() {
-        MessagesIndex.refresh();
+        MessagesAdd.clear();
       }, 500);
     });
 
@@ -22,9 +21,6 @@ var MessagesAdd = {
       if (e.which == 13) {
         MessagesAdd.ui.form.submit();
         MessagesAdd.clear();
-        setTimeout(function() {
-          MessagesIndex.refresh();
-        }, 500);
         return false;
       }
     });

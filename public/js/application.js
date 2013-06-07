@@ -8,8 +8,8 @@ $.getScript('/js/core/core.js', function() {
 
 /* Shared */
 
-$.getScript('/js/shared/modals.js');
 $.getScript('/js/shared/httpget.js');
+$.getScript('/js/shared/modals.js');
 
 /* Section */
 

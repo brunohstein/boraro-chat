@@ -6,12 +6,9 @@ var httpGet = function(theUrl) {
   return xmlHttp.responseText;
 };
 
-var port = process.env.PORT || 8000,
-    io = require('socket.io').listen(port);
-
-io.configure(function () { 
-  io.set("transports", ["xhr-polling"]); 
-  io.set("polling duration", 10); 
+geddy.socket.configure(function () { 
+  geddy.socket.set("transports", ["xhr-polling"]); 
+  geddy.socket.set("polling duration", 10); 
 });
 
 geddy.io.addListenersForModels(['Message']);

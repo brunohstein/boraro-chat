@@ -8,9 +8,9 @@ var MessagesIndex = {
 
   url: function() {
     if (location.href.slice(-1) == '/') {
-      return location.href.slice(0, -1);
+      return location.href.slice(0, -1) + '.json';
     } else {
-      return location.href;
+      return location.href + '.json';
     };
   },
 
@@ -19,7 +19,7 @@ var MessagesIndex = {
   },
 
   init: function() {
-    var data = JSON.parse(httpGet(MessagesIndex.url() + '.json'));
+    var data = JSON.parse(httpGet(MessagesIndex.url()));
     MessagesIndex.counter = data.messages.length;
 
     MessagesIndex.showLoader();
@@ -101,24 +101,16 @@ var MessagesIndex = {
   },
 
   refresh: function() {
-    $.ajax({
-      url: MessagesIndex.url() + '.json',
-      type: 'get',
-      dataType: 'json',
-      cache: false,
-      async: false,
-      success: function(data) {
-        var updates = data.messages.length - MessagesIndex.counter;
+    var data = $.parseJSON(httpGet(MessagesIndex.url())),
+        updates = data.messages.length - MessagesIndex.counter;
 
-        if (updates > 0) {
-          for (i = MessagesIndex.counter; i < data.messages.length; i++) {
-            MessagesIndex.render(data.messages[i]);
-          }
-
-          MessagesIndex.counter = data.messages.length;
-        };
+    if (updates > 0) {
+      for (i = MessagesIndex.counter; i < data.messages.length; i++) {
+        MessagesIndex.render(data.messages[i]);
       }
-    });
+
+      MessagesIndex.counter = data.messages.length;
+    };
   },
 
   render: function(message) {

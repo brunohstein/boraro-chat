@@ -90,6 +90,7 @@
       position: relative;
       box-sizing: border-box;
       margin: 12px 0 32px;
+      word-wrap: break-word;
 
       &:before {
         content: '';

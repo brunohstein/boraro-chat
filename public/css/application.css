@@ -496,7 +496,8 @@ input[type="radio"]:checked + label {
     display: block;
     position: relative;
     box-sizing: border-box;
-    margin: 12px 0 32px; }
+    margin: 12px 0 32px;
+    word-wrap: break-word; }
     .messages.index li .body:before {
       content: '';
       display: block;

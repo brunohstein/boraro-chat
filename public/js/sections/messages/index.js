@@ -30,7 +30,9 @@ var MessagesIndex = {
       MessagesIndex.hideLoader();
     }, 1000);
 
-    MessagesIndex.refresh();
+    setInterval(function() {
+      MessagesIndex.refresh();
+    }, 2000);
   },
 
   showLoader: function() {
@@ -99,14 +101,23 @@ var MessagesIndex = {
   },
 
   refresh: function() {
-    var worker  = new Worker('/js/sections/messages/refresh.js'),
-        url     = MessagesIndex.url(),
-        counter = MessagesIndex.counter;
+    $.ajax({
+      url: MessagesIndex.url() + '.json',
+      type: 'get',
+      dataType: 'json',
+      cache: false,
+      async: false,
+      success: function(data) {
+        var updates = data.messages.length - MessagesIndex.counter;
 
-    worker.postMessage({url: url, counter: counter});
+        if (updates > 0) {
+          for (i = MessagesIndex.counter; i < data.messages.length; i++) {
+            MessagesIndex.render(data.messages[i]);
+          }
 
-    worker.addEventListener('message', function(event) {
-      MessagesIndex.render(event.data.message);
+          MessagesIndex.counter = data.messages.length;
+        };
+      }
     });
   },
 

@@ -1,6 +1,5 @@
 @import "shared/reset";
 @import "shared/fonts";
-@import "shared/grid";
 @import "shared/variables";
 @import "shared/typography";
 @import "shared/forms";
@@ -8,8 +7,14 @@
 @import "shared/modals";
 
 @import "sections/main/ui";
+@import "sections/main/login";
 
 @import "sections/rooms/show";
 
 @import "sections/messages/add";
 @import "sections/messages/index";
+
+body {
+  width: 770px;
+  margin: 0 auto;
+}

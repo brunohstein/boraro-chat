@@ -1,0 +1,47 @@
+.main.index {
+  height: 450px;
+  position: absolute;
+  top: 50%;
+  margin-top: -225px;
+  left: 50%;
+  margin-left: -162px;
+
+  header {
+    text-align: center;
+    margin: 0 auto 40px;
+    display: block;
+    position: relative;
+
+    h1 {
+      position: absolute;
+      right: 207px;
+      margin: 0;
+      top: 3px;
+    }
+  }
+
+  .btn {
+    width: 82px;
+    padding: 0;
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+  }
+
+  form {
+    width: 300px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .divider {
+    height: 1px;
+    width: 335px;
+    margin: 30px auto 20px;
+    background: #eeeeee;
+  }
+
+  legend {
+    margin: 0 0 20px 12px;
+  }
+}

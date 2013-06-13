@@ -52,122 +52,6 @@ table {
   font-weight: normal;
   font-style: normal; }
 
-.align-center {
-  text-align: center; }
-
-.align-left {
-  text-align: left; }
-
-.align-right {
-  text-align: right; }
-
-body {
-  padding: 30px 0; }
-
-.row {
-  width: 1176px;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 0;
-  letter-spacing: 0;
-  word-spacing: 0;
-  white-space: nowrap;
-  display: block; }
-  .row + .row {
-    margin-top: 10px; }
-
-.span {
-  width: 100%;
-  float: none;
-  margin-left: 0;
-  display: inline-block;
-  vertical-align: top;
-  zoom: 1;
-  /* Internet Explorer */
-  *display: inline;
-  /* Internet Explorer */
-  font-size: 14px;
-  letter-spacing: normal;
-  word-spacing: normal;
-  white-space: normal;
-  text-align: left; }
-  .span .row {
-    width: inherit; }
-  .span + .span {
-    margin-left: 24px; }
-
-.span1 {
-  width: 26px; }
-
-.span2 {
-  width: 76px; }
-
-.span3 {
-  width: 126px; }
-
-.span4 {
-  width: 176px; }
-
-.span5 {
-  width: 226px; }
-
-.span6 {
-  width: 276px; }
-
-.span7 {
-  width: 326px; }
-
-.span8 {
-  width: 376px; }
-
-.span9 {
-  width: 426px; }
-
-.span10 {
-  width: 476px; }
-
-.span11 {
-  width: 526px; }
-
-.span12 {
-  width: 576px; }
-
-.span13 {
-  width: 626px; }
-
-.span14 {
-  width: 676px; }
-
-.span15 {
-  width: 726px; }
-
-.span16 {
-  width: 776px; }
-
-.span17 {
-  width: 826px; }
-
-.span18 {
-  width: 876px; }
-
-.span19 {
-  width: 926px; }
-
-.span20 {
-  width: 976px; }
-
-.span21 {
-  width: 1026px; }
-
-.span22 {
-  width: 1076px; }
-
-.span23 {
-  width: 1126px; }
-
-.span24 {
-  width: 1176px; }
-
 body {
   background: #f9f9f9;
   font-family: "Proxima Nova", sans-serif;
@@ -186,45 +70,58 @@ h1 {
   color: #666666;
   margin: 10px 0; }
 
+legend {
+  text-transform: uppercase;
+  color: #888888;
+  font-size: 14px;
+  font-family: "Proxima Nova Bold", sans-serif;
+  line-height: 20px; }
+  legend small {
+    text-transform: none;
+    color: #aaaaaa;
+    font-family: "Proxima Nova Light", sans-serif;
+    display: block; }
+
 input[type="text"], input[type="email"], input[type="password"], textarea {
   border-radius: 5px;
   background: white;
   border: 1px solid #eeeeee;
-  padding: 15px;
+  padding: 15px 12px;
   color: #aaaaaa;
   font-size: 14px;
   font-family: "Proxima Nova", sans-serif;
   display: block;
   box-sizing: border-box;
-  margin: 0 auto; }
+  margin: 0 auto;
+  width: 300px; }
   input[type="text"] + input[type="text"], input[type="text"] + input[type="email"], input[type="text"] + input[type="password"], input[type="text"] + textarea, input[type="email"] + input[type="text"], input[type="email"] + input[type="email"], input[type="email"] + input[type="password"], input[type="email"] + textarea, input[type="password"] + input[type="text"], input[type="password"] + input[type="email"], input[type="password"] + input[type="password"], input[type="password"] + textarea, textarea + input[type="text"], textarea + input[type="email"], textarea + input[type="password"], textarea + textarea {
     margin-top: 10px; }
   input[type="text"]::-webkit-input-placeholder, input[type="email"]::-webkit-input-placeholder, input[type="password"]::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
-    color: #aaaaaa;
+    color: #888888;
     transition: .2s; }
   input[type="text"]:-moz-placeholder, input[type="email"]:-moz-placeholder, input[type="password"]:-moz-placeholder, textarea:-moz-placeholder {
-    color: #aaaaaa;
+    color: #888888;
     transition: .2s; }
   input[type="text"]::-moz-placeholder, input[type="email"]::-moz-placeholder, input[type="password"]::-moz-placeholder, textarea::-moz-placeholder {
-    color: #aaaaaa;
+    color: #888888;
     transition: .2s; }
   input[type="text"]:-ms-input-placeholder, input[type="email"]:-ms-input-placeholder, input[type="password"]:-ms-input-placeholder, textarea:-ms-input-placeholder {
-    color: #aaaaaa;
+    color: #888888;
     transition: .2s; }
   input[type="text"]:hover, input[type="email"]:hover, input[type="password"]:hover, textarea:hover {
     box-shadow: 0 1px 0 #f5f5f5;
-    color: #888888; }
+    color: #666666; }
     input[type="text"]:hover::-webkit-input-placeholder, input[type="email"]:hover::-webkit-input-placeholder, input[type="password"]:hover::-webkit-input-placeholder, textarea:hover::-webkit-input-placeholder {
-      color: #888888; }
+      color: #666666; }
     input[type="text"]:hover:-moz-placeholder, input[type="email"]:hover:-moz-placeholder, input[type="password"]:hover:-moz-placeholder, textarea:hover:-moz-placeholder {
-      color: #888888; }
+      color: #666666; }
     input[type="text"]:hover::-moz-placeholder, input[type="email"]:hover::-moz-placeholder, input[type="password"]:hover::-moz-placeholder, textarea:hover::-moz-placeholder {
-      color: #888888; }
+      color: #666666; }
     input[type="text"]:hover:-ms-input-placeholder, input[type="email"]:hover:-ms-input-placeholder, input[type="password"]:hover:-ms-input-placeholder, textarea:hover:-ms-input-placeholder {
-      color: #888888; }
+      color: #666666; }
   input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, textarea:focus {
     box-shadow: 0 1px 2px #eeeeee inset;
-    color: #888888;
+    color: #666666;
     outline: 0; }
     input[type="text"]:focus::-webkit-input-placeholder, input[type="email"]:focus::-webkit-input-placeholder, input[type="password"]:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder {
       color: #eeeeee; }
@@ -260,12 +157,12 @@ input[type="checkbox"], input[type="radio"] {
     margin-left: -12px;
     cursor: pointer;
     outline: 0;
-    color: #aaaaaa;
+    color: #888888;
     font-size: 14px;
     line-height: 20px;
     font-family: "Proxima Nova", sans-serif; }
     input[type="checkbox"] + label:hover, input[type="radio"] + label:hover {
-      color: #888888;
+      color: #666666;
       transition: color .2s; }
 
 input[type="checkbox"] + label {
@@ -287,7 +184,8 @@ input[type="radio"]:checked + label {
   text-align: center;
   margin: 10px 0 0;
   display: inline-block;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  height: 65px; }
   .btn.btn {
     color: #aaaaaa;
     text-shadow: 0 1px 0 white;
@@ -367,6 +265,41 @@ input[type="radio"]:checked + label {
 
 .ui {
   margin: 30px 0; }
+
+.main.index {
+  height: 450px;
+  position: absolute;
+  top: 50%;
+  margin-top: -225px;
+  left: 50%;
+  margin-left: -162px; }
+  .main.index header {
+    text-align: center;
+    margin: 0 auto 40px;
+    display: block;
+    position: relative; }
+    .main.index header h1 {
+      position: absolute;
+      right: 207px;
+      margin: 0;
+      top: 3px; }
+  .main.index .btn {
+    width: 82px;
+    padding: 0;
+    position: absolute;
+    right: 5px;
+    bottom: 5px; }
+  .main.index form {
+    width: 300px;
+    margin: 0 auto;
+    position: relative; }
+  .main.index .divider {
+    height: 1px;
+    width: 335px;
+    margin: 30px auto 20px;
+    background: #eeeeee; }
+  .main.index legend {
+    margin: 0 0 20px 12px; }
 
 .rooms.show .sidebar {
   position: relative;
@@ -536,3 +469,7 @@ input[type="radio"]:checked + label {
       font-size: 13px;
       font-family: "Proxima Nova Light", sans-serif;
       font-style: italic; }
+
+body {
+  width: 770px;
+  margin: 0 auto; }

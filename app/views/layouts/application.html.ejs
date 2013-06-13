@@ -9,10 +9,6 @@
     <%- styleLink('/css/application.css',      {rel:'stylesheet'}) %>
   </head>
   <body data-controller="<%= params.controller.toLowerCase(); %>" data-action="<%= params.action %>">
-    <div class="row align-center">
-      <div class="span span16">
-        <%- yield(); %>
-      </div>
-    </div>
+    <%- yield(); %>
   </body>
 </html>

@@ -12,7 +12,10 @@ var Main = function () {
       if (user) {
         self.redirect({controller: 'users', action: 'show', user: user.username});
       } else {
-        self.transfer('login');
+        self.respond(params, {
+          format: 'html',
+          template: 'app/views/main/index'
+        });
       };
     });
   };

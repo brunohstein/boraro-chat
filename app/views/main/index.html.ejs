@@ -1,12 +1,33 @@
-<% if (user) { %>
-  <h1>
-    Hello<% if (user.name) { %>, <%- linkTo(user.name, userPath(user.username)) %><% } %>
-  </h1>
-  <p>You've successfully logged in to this Geddy app (via <%= authType %>).</p>
-  <p><%- linkTo('Click here to log back out', logoutPath) %></p>
-<% } else { %>
-  <h1>Hello, stranger</h1>
-  <p>You're not authenticated with this app.</p>
-  <p><%- linkTo('Click here to create a user account.', addUserPath) %></p>
-  <p><%- linkTo('Click here to log in.', loginPath) %></p>
-<% } %>
+<div class="main index">
+  <header>
+    <h1>Sit down.</h1>
+    <img src="/img/shared/seat-icon.png" alt="Seat - sit down and have a talk">
+  </header>
+
+  <form id="login-form" action="<%= localPath %>" method="POST">
+    <%- contentTag('input', params.username, {type: 'text', name: 'username', placeholder: 'Username', id: 'username'}) %>
+    <%- contentTag('input', params.password, {type: 'password', name: 'password', placeholder: 'Password', id: 'password'}) %>
+    <%- contentTag('input', 'Login', {type: 'submit', class: 'btn', tabindex: '-1'}) %>
+  </form>
+
+  <div class="divider"></div>
+
+  <form id="user-form" action="<%= usersPath %>" method="POST" enctype="multipart/form-data">
+    <legend>New user? <small>Fill the remaining fields.</small></legend>
+
+    <% if (params.errors) { %>
+      <ul>
+        <% for(var err in params.errors) { %>
+          <li><%= params.errors[err]; %></li>
+        <% } %>
+      </ul>
+    <% } %>
+
+    <%- contentTag('input', params.username, {type: 'hidden', name: 'username', placeholder: 'Username', id: 'username-mirror'}) %>
+    <%- contentTag('input', params.password, {type: 'hidden', name: 'password', placeholder: 'Password', id: 'password-mirror'}) %>
+    <%- contentTag('input', params.confirmPassword, {type: 'password', name: 'confirmPassword', placeholder: 'Confirm password'}) %>
+    <%- contentTag('input', params.name, {type: 'text', name: 'name', placeholder: 'Name'}) %>
+    <%- contentTag('input', params.email, {type:'email', name: 'email', placeholder: 'E-mail'}) %>
+    <%- contentTag('input', 'Sign up', {type: 'submit', class: 'btn primary', tabindex: '-1'}) %>
+  </form>
+</div>

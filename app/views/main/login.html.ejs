@@ -1,8 +1,12 @@
-<form id="login-form" action="<%= localPath %>" method="POST" class="align-center">
-  <%- contentTag('input', params.username, {type: 'text', name: 'username', placeholder: 'Username', class: 'span6'}) %>
+<div class="main index">
+  <header>
+    <h1>Sit down.</h1>
+    <img src="/img/shared/seat-icon.png" alt="Seat - sit down and have a talk">
+  </header>
 
-  <%- contentTag('input', params.password, {type: 'password', name: 'password', placeholder: 'Password', class: 'span6'}) %>
-
-  <%- linkTo('New user', '/users/add', {class: 'btn span3'}) %>
-  <%- contentTag('input', 'Login', {type: 'submit', class: 'btn primary span3'}) %>
-</form>
+  <form id="login-form" action="<%= localPath %>" method="POST">
+    <%- contentTag('input', params.username, {type: 'text', name: 'username', placeholder: 'Username', id: 'username'}) %>
+    <%- contentTag('input', params.password, {type: 'password', name: 'password', placeholder: 'Password', id: 'password'}) %>
+    <%- contentTag('input', 'Login', {type: 'submit', class: 'btn', tabindex: '-1'}) %>
+  </form>
+</div>

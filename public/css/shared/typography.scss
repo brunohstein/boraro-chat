@@ -21,3 +21,18 @@ h1 {
   color: $grayd;
   margin: 10px 0;
 }
+
+legend {
+  text-transform: uppercase;
+  color: $gray;
+  font-size: 14px;
+  font-family: $proximab;
+  line-height: 20px;
+
+  small {
+    text-transform: none;
+    color: $grayl;
+    font-family: $proximal;
+    display: block;
+  }
+}

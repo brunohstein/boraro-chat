@@ -1,0 +1,1 @@
+[Wed, 12 Jun 2013 23:36:12 GMT] ERROR 127.0.0.1 - - [Wed Jun 12 2013 20:36:12 GMT-0300 (BRT)] "GET /login 1.1" 500 938 "http://0.0.0.0:4000/logout" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.110 Safari/537.36"
